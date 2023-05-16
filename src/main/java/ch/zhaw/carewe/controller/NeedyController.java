@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.carewe.model.Needy;
 import ch.zhaw.carewe.model.NeedyCreateDTO;
-import ch.zhaw.carewe.model.NeedyState;
+
 import ch.zhaw.carewe.model.NeedyStateAggregation;
 import ch.zhaw.carewe.repository.NeedyRepository;
 

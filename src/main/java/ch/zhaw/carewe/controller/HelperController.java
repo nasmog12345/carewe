@@ -18,7 +18,7 @@ import ch.zhaw.carewe.model.HelperCreateDTO;
 import ch.zhaw.carewe.repository.HelperRepository;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api")
