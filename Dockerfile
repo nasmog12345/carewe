@@ -7,10 +7,6 @@ RUN apt-get update && apt-get install -y curl \
 WORKDIR /usr/src/app
 COPY . .
 
-RUN cd freelancer4u-frontend && npm install
-RUN cd freelancer4u-frontend && npm run build
-RUN rm -r freelancer4u-frontend
-
 RUN sed -i 's/\r$//' mvnw
 RUN chmod +x mvnw
 RUN ./mvnw package
