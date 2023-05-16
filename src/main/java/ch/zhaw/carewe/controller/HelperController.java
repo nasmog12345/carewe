@@ -19,7 +19,6 @@ import ch.zhaw.carewe.repository.HelperRepository;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @RestController
 @RequestMapping("/api")
 
