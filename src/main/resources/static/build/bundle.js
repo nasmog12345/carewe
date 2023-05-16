@@ -5688,7 +5688,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (166:8) {#each needies as needy}
+    // (158:8) {#each needies as needy}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
@@ -5730,12 +5730,12 @@ var app = (function () {
     			td4 = element("td");
     			t8 = text(t8_value);
     			t9 = space();
-    			add_location(td0, file$6, 167, 8, 4666);
-    			add_location(td1, file$6, 168, 8, 4697);
-    			add_location(td2, file$6, 169, 8, 4729);
-    			add_location(td3, file$6, 170, 8, 4763);
-    			add_location(td4, file$6, 171, 8, 4796);
-    			add_location(tr, file$6, 166, 8, 4652);
+    			add_location(td0, file$6, 159, 8, 4413);
+    			add_location(td1, file$6, 160, 8, 4444);
+    			add_location(td2, file$6, 161, 8, 4476);
+    			add_location(td3, file$6, 162, 8, 4510);
+    			add_location(td4, file$6, 163, 8, 4543);
+    			add_location(tr, file$6, 158, 8, 4399);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -5771,7 +5771,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(166:8) {#each needies as needy}",
+    		source: "(158:8) {#each needies as needy}",
     		ctx
     	});
 
@@ -5821,7 +5821,7 @@ var app = (function () {
     	let option9;
     	let option10;
     	let t27;
-    	let div10;
+    	let div9;
     	let div8;
     	let label5;
     	let t29;
@@ -5830,28 +5830,23 @@ var app = (function () {
     	let option12;
     	let option13;
     	let t33;
-    	let div9;
-    	let label6;
-    	let t35;
-    	let input4;
-    	let t36;
     	let button;
-    	let t38;
+    	let t35;
     	let h11;
-    	let t40;
+    	let t37;
     	let table;
     	let thead;
     	let tr;
     	let th0;
-    	let t42;
+    	let t39;
     	let th1;
-    	let t44;
+    	let t41;
     	let th2;
-    	let t46;
+    	let t43;
     	let th3;
-    	let t48;
+    	let t45;
     	let th4;
-    	let t50;
+    	let t47;
     	let tbody;
     	let mounted;
     	let dispose;
@@ -5924,7 +5919,7 @@ var app = (function () {
     			option10 = element("option");
     			option10.textContent = "Pet Care";
     			t27 = space();
-    			div10 = element("div");
+    			div9 = element("div");
     			div8 = element("div");
     			label5 = element("label");
     			label5.textContent = "NeedyState";
@@ -5937,36 +5932,30 @@ var app = (function () {
     			option13 = element("option");
     			option13.textContent = "DONE";
     			t33 = space();
-    			div9 = element("div");
-    			label6 = element("label");
-    			label6.textContent = "helperId";
-    			t35 = space();
-    			input4 = element("input");
-    			t36 = space();
     			button = element("button");
     			button.textContent = "Submit";
-    			t38 = space();
+    			t35 = space();
     			h11 = element("h1");
     			h11.textContent = "All Needies";
-    			t40 = space();
+    			t37 = space();
     			table = element("table");
     			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
     			th0.textContent = "Name";
-    			t42 = space();
+    			t39 = space();
     			th1 = element("th");
     			th1.textContent = "Email";
-    			t44 = space();
+    			t41 = space();
     			th2 = element("th");
     			th2.textContent = "Address";
-    			t46 = space();
+    			t43 = space();
     			th3 = element("th");
     			th3.textContent = "Number";
-    			t48 = space();
+    			t45 = space();
     			th4 = element("th");
     			th4.textContent = "Needs";
-    			t50 = space();
+    			t47 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -6079,38 +6068,29 @@ var app = (function () {
     			add_location(select1, file$6, 129, 8, 3585);
     			attr_dev(div8, "class", "col");
     			add_location(div8, file$6, 127, 4, 3493);
-    			attr_dev(label6, "class", "form-label");
-    			attr_dev(label6, "for", "number");
-    			add_location(label6, file$6, 141, 8, 3967);
-    			attr_dev(input4, "class", "form-control");
-    			attr_dev(input4, "id", "helperId");
-    			attr_dev(input4, "type", "text");
-    			add_location(input4, file$6, 142, 8, 4032);
-    			attr_dev(div9, "class", "col");
-    			add_location(div9, file$6, 140, 4, 3940);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file$6, 150, 4, 4197);
-    			attr_dev(div10, "class", "row mb-3");
-    			add_location(div10, file$6, 126, 0, 3465);
+    			add_location(button, file$6, 142, 4, 3944);
+    			attr_dev(div9, "class", "row mb-3");
+    			add_location(div9, file$6, 126, 0, 3465);
     			attr_dev(form, "class", "mb-5");
     			add_location(form, file$6, 60, 0, 1413);
-    			add_location(h11, file$6, 153, 0, 4294);
+    			add_location(h11, file$6, 145, 0, 4041);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$6, 157, 12, 4378);
+    			add_location(th0, file$6, 149, 12, 4125);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$6, 158, 12, 4417);
+    			add_location(th1, file$6, 150, 12, 4164);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$6, 159, 12, 4457);
+    			add_location(th2, file$6, 151, 12, 4204);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$6, 160, 12, 4499);
+    			add_location(th3, file$6, 152, 12, 4246);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$6, 161, 12, 4540);
-    			add_location(tr, file$6, 156, 8, 4360);
-    			add_location(thead, file$6, 155, 4, 4343);
-    			add_location(tbody, file$6, 164, 4, 4601);
+    			add_location(th4, file$6, 153, 12, 4287);
+    			add_location(tr, file$6, 148, 8, 4107);
+    			add_location(thead, file$6, 147, 4, 4090);
+    			add_location(tbody, file$6, 156, 4, 4348);
     			attr_dev(table, "class", "table");
-    			add_location(table, file$6, 154, 0, 4316);
+    			add_location(table, file$6, 146, 0, 4063);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6163,8 +6143,8 @@ var app = (function () {
     			append_dev(select0, option10);
     			select_options(select0, /*needy*/ ctx[1].needs);
     			append_dev(form, t27);
-    			append_dev(form, div10);
-    			append_dev(div10, div8);
+    			append_dev(form, div9);
+    			append_dev(div9, div8);
     			append_dev(div8, label5);
     			append_dev(div8, t29);
     			append_dev(div8, select1);
@@ -6172,30 +6152,24 @@ var app = (function () {
     			append_dev(select1, option12);
     			append_dev(select1, option13);
     			select_option(select1, /*needy*/ ctx[1].needyState, true);
-    			append_dev(div10, t33);
-    			append_dev(div10, div9);
-    			append_dev(div9, label6);
-    			append_dev(div9, t35);
-    			append_dev(div9, input4);
-    			set_input_value(input4, /*needy*/ ctx[1].helperId);
-    			append_dev(div10, t36);
-    			append_dev(div10, button);
-    			insert_dev(target, t38, anchor);
+    			append_dev(div9, t33);
+    			append_dev(div9, button);
+    			insert_dev(target, t35, anchor);
     			insert_dev(target, h11, anchor);
-    			insert_dev(target, t40, anchor);
+    			insert_dev(target, t37, anchor);
     			insert_dev(target, table, anchor);
     			append_dev(table, thead);
     			append_dev(thead, tr);
     			append_dev(tr, th0);
-    			append_dev(tr, t42);
+    			append_dev(tr, t39);
     			append_dev(tr, th1);
-    			append_dev(tr, t44);
+    			append_dev(tr, t41);
     			append_dev(tr, th2);
-    			append_dev(tr, t46);
+    			append_dev(tr, t43);
     			append_dev(tr, th3);
-    			append_dev(tr, t48);
+    			append_dev(tr, t45);
     			append_dev(tr, th4);
-    			append_dev(table, t50);
+    			append_dev(table, t47);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -6212,7 +6186,6 @@ var app = (function () {
     					listen_dev(input3, "input", /*input3_input_handler*/ ctx[6]),
     					listen_dev(select0, "change", /*select0_change_handler*/ ctx[7]),
     					listen_dev(select1, "change", /*select1_change_handler*/ ctx[8]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[9]),
     					listen_dev(button, "click", /*createNeedy*/ ctx[2], false, false, false, false)
     				];
 
@@ -6242,10 +6215,6 @@ var app = (function () {
 
     			if (dirty & /*needy*/ 2) {
     				select_option(select1, /*needy*/ ctx[1].needyState);
-    			}
-
-    			if (dirty & /*needy*/ 2 && input4.value !== /*needy*/ ctx[1].helperId) {
-    				set_input_value(input4, /*needy*/ ctx[1].helperId);
     			}
 
     			if (dirty & /*needies*/ 1) {
@@ -6278,9 +6247,9 @@ var app = (function () {
     			if (detaching) detach_dev(h10);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(form);
-    			if (detaching) detach_dev(t38);
+    			if (detaching) detach_dev(t35);
     			if (detaching) detach_dev(h11);
-    			if (detaching) detach_dev(t40);
+    			if (detaching) detach_dev(t37);
     			if (detaching) detach_dev(table);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
@@ -6386,11 +6355,6 @@ var app = (function () {
     		$$invalidate(1, needy);
     	}
 
-    	function input4_input_handler() {
-    		needy.helperId = this.value;
-    		$$invalidate(1, needy);
-    	}
-
     	$$self.$capture_state = () => ({
     		axios: axios$1,
     		api_root: api_root$4,
@@ -6418,8 +6382,7 @@ var app = (function () {
     		input2_input_handler,
     		input3_input_handler,
     		select0_change_handler,
-    		select1_change_handler,
-    		input4_input_handler
+    		select1_change_handler
     	];
     }
 
