@@ -12,6 +12,7 @@
         address: null,
         number: null,
         needs: [],
+        notes:null,
         needyState: null,
         
     };
@@ -83,7 +84,7 @@
     </div>
     <div class="row mb-3">
         <div class="col">
-            <label class="form-label" for="address">Address</label>
+            <label class="form-label" for="address">Stadt</label>
             <input
                 bind:value={needy.address}
                 class="form-control"
@@ -125,6 +126,17 @@
     </select>
   </div>
 </div>
+<div class="row mb-3">
+    <div class="col">
+      <label class="form-label" for="bio">Notes</label>
+      <textarea
+        bind:value={needy.notes}
+        class="form-control"
+        id="bio"
+        rows="5"
+      ></textarea>
+    </div>
+  </div>
 
 <div class="row mb-3">
     <div class="col">
@@ -154,6 +166,7 @@
             <th scope="col">Address</th>
             <th scope="col">Number</th>
             <th scope="col">Needs</th>
+            <th scope="col">Notes</th>
         </tr>
     </thead>
     <tbody>
@@ -164,6 +177,7 @@
         <td>{needy.address}</td>
         <td>{needy.number}</td>
         <td>{needy.needs.join(", ")}</td>
+        <td>{needy.notes}</td>
         </tr>
         {/each}
         </tbody>
