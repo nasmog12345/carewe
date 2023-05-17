@@ -1,0 +1,4 @@
+[submodule "freelancer4u-frontend"]
+    path = freelancer4u-frontend
+    url = https://github.com/nasmog12345/carewe.git
+    branch = frontend
