@@ -1,5 +1,6 @@
 <script>
     import axios from "axios";
+    import { jwt_token} from "../store";
 
     // Update this to point to the URL of your Spring Boot backend
     const api_root = "http://localhost:8080";
@@ -12,14 +13,14 @@
         number: null,
         needs: [],
         needyState: null,
-        helperId: null,
+        
     };
 
     function getNeedies() {
         var config = {
             method: "get",
             url: api_root + "/api/needy",
-            headers: {},
+            headers: {"Authorization": "Bearer " + $jwt_token,},
         };
 
         axios(config)
@@ -39,6 +40,7 @@
         url: api_root + "/api/needy",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": "Bearer " + $jwt_token,
         },
         data: needy,
     };
@@ -138,15 +140,7 @@
             <option value="DONE">DONE</option>
             </select>
     </div>
-    <div class="col">
-        <label class="form-label" for="number">helperId</label>
-        <input
-            bind:value={needy.helperId}
-            class="form-control"
-            id="helperId"
-            type="text"
-        />
-    </div>
+  
 
     <button type="button" class="btn btn-primary" on:click={createNeedy}>Submit</button>
 </form>

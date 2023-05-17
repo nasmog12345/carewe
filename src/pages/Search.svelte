@@ -3,6 +3,7 @@
   import axios from 'axios';
   import HelperCard from './HelperCard.svelte';
   import NeedyMatch from './NeedyMatch.svelte';
+  import { jwt_token} from "../store";
 
   const api_root = "http://localhost:8080";
   let filteredItems;
@@ -10,23 +11,31 @@ let displaySearch = false;
   let searchTerm = '';
   let helpers = [];
   let helper = {
-    name: null,
-    email: null,
-    skills: [],
+      id: null,
+      name: null,
+      email: null,
+      skills: [],
+      bio: null,
 helperState: null,
-  };
+      //helperState: null,
+    };
 
   function getHelpers() {
-    axios
-      .get(api_root + "/api/helper")
-      .then(function (response) {
-        helpers = response.data;
-      })
-      .catch(function (error) {
-        alert("Could not get helpers");
-        console.log(error);
-      });
-  }
+  axios
+    .get(api_root + "/api/helper", {
+      headers: {
+        "Authorization": "Bearer " + $jwt_token,
+      },
+    })
+    .then(function (response) {
+      helpers = response.data;
+    })
+    .catch(function (error) {
+      alert("Could not get helpers");
+      console.log(error);
+    });
+}
+
 
   function filterItems() {
   if (searchTerm) {
@@ -58,6 +67,7 @@ helperState: null,
         .post(api_root + "/api/helper", helper, {
           headers: {
             "Content-Type": "application/json",
+            "Authorization": "Bearer " + $jwt_token,
           },
         })
         .then(function (response) {
@@ -127,6 +137,17 @@ helperState: null,
           <option value="IT">IT</option>
           <option value="Elektriker">Elektriker</option>
         </select>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label" for="bio">Bio</label>
+          <textarea
+            bind:value={helper.bio}
+            class="form-control"
+            id="bio"
+            rows="5"
+          ></textarea>
+        </div>
       </div>
     </div>
     <div class="row mb-3">

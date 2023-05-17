@@ -1,6 +1,6 @@
 <script>
   import axios from "axios";
-
+  import { user, jwt_token } from "../store";
   const api_root = "http://localhost:8080";
   
   const urlParam = window.location.href.split('/')[5];
@@ -40,6 +40,8 @@
   }
 </script>
 
+<!-- nur admins können rating verfassen-->
+{#if $user.user_roles && $user.user_roles.includes("admin")}
 <form on:submit={handleSubmit}>
   <label for="titel">Titel</label>
   <input type="text" id="titel" bind:value={rating.titel} />
@@ -57,3 +59,4 @@
   <button type="submit">Submit</button>
 </form>
 
+{/if}

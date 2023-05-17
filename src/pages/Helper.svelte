@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import axios from "axios";
+    import { jwt_token} from "../store";
  
   
     const api_root = "http://localhost:8080";
@@ -17,25 +18,30 @@ helperState: null,
     };
   
     function getHelpers() {
-      axios
-        .get(api_root + "/api/helper")
-        .then(function (response) {
-          helpers = response.data;
-        })
-        .catch(function (error) {
-          alert("Could not get helpers");
-          console.log(error);
-        });
-    }
-    
+  axios
+    .get(api_root + "/api/helper", {
+      headers: {
+        "Authorization": "Bearer " + $jwt_token,
+      },
+    })
+    .then(function (response) {
+      helpers = response.data;
+    })
+    .catch(function (error) {
+      alert("Could not get helpers");
+      console.log(error);
+    });
+}
 
     
-  
+
+
     function createHelper() {
       axios
         .post(api_root + "/api/helper", helper, {
           headers: {
             "Content-Type": "application/json",
+            "Authorization": "Bearer " + $jwt_token,
           },
         })
         .then(function (response) {
