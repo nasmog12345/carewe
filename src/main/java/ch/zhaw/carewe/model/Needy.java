@@ -31,7 +31,5 @@ public class Needy {
     private List<String> needs;
     @NonNull
     private NeedyState needyState;
-    @NonNull
-    private String helperId;
 
 }

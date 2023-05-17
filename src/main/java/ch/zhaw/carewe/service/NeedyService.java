@@ -26,7 +26,7 @@ public class NeedyService {
                 Helper helper = helperRepository.findFirstByEmail(helperEmail);
                 if (helper != null) {
                     needy.setNeedyState(NeedyState.ASSIGNED);
-                    needy.setHelperId(helper.getId());
+                    //needy.setHelperId(helper.getId());
                     needyRepository.save(needy);
                     return Optional.of(needy);
                 }
@@ -40,7 +40,7 @@ public class NeedyService {
         if (searchedNeedy.isPresent()) {
             Needy needy = searchedNeedy.get();
             if (needy.getEmail() == email && needy.getNeedyState() == NeedyState.ASSIGNED
-                    && needy.getHelperId() == needyid) {
+                    /*&& needy.getHelperId() == needyid*/) {
                 needy.setNeedyState(NeedyState.DONE);
                 needyRepository.save(needy);
                 return Optional.of(needy);

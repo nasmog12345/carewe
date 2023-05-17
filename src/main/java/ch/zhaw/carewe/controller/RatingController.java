@@ -3,6 +3,7 @@ package ch.zhaw.carewe.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,7 @@ public class RatingController {
 
     @CrossOrigin(origins = "http://localhost:8081")
     @PostMapping("/rating")
+    @Secured("ROLE_admin")
     public ResponseEntity<Rating> createHelper(@RequestBody RatingDTO rDTO) {
         Rating rating = new Rating(rDTO.getTitel(), rDTO.getName(),
                 rDTO.getZahl(), rDTO.getRezession(), rDTO.getHelperId());

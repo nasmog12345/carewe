@@ -30,7 +30,7 @@ public class NeedyController {
     @PostMapping("/needy")
     public ResponseEntity<Needy> createNeedy(@RequestBody NeedyCreateDTO nDTO) {
         Needy needy = new Needy(nDTO.getName(), nDTO.getEmail(), nDTO.getAddress(), nDTO.getNumber(), nDTO.getNeeds(),
-                nDTO.getNeedyState(), nDTO.getHelperId());
+                nDTO.getNeedyState());
         Needy savedNeedy = needyRepository.save(needy);
         return new ResponseEntity<>(savedNeedy, HttpStatus.CREATED);
     }
