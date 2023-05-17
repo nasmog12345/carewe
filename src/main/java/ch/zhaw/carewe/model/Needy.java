@@ -30,6 +30,8 @@ public class Needy {
     @NonNull
     private List<String> needs;
     @NonNull
+    String notes;
+    @NonNull
     private NeedyState needyState;
 
 }

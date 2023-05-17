@@ -12,6 +12,7 @@ public class NeedyCreateDTO {
     private String address;
     private String number;
     private List<String> needs;
+    private String notes;
     private NeedyState needyState;
  
 }
