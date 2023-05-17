@@ -4,6 +4,7 @@ import Helper from "./pages/Helper.svelte";
 import Needy from "./pages/Needy.svelte";
 import Search from "./pages/Search.svelte";
 import HelperId from "./pages/HelperId.svelte"
+import Account from "./pages/Account.svelte"
 
 
 export default {
@@ -13,6 +14,7 @@ export default {
   '/needies': Needy,
   '/search': Search,
   '/helper/:id': HelperId,
+  '/account' : Account,
   
 
   
