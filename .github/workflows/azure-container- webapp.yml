@@ -36,7 +36,8 @@ jobs:
         with:
           push: true
           tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
-          file: ./backend/Dockerfile
+          run: cd backend
+          file: ./Dockerfile
 
   deploy:
     permissions:
