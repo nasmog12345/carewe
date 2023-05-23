@@ -11,6 +11,10 @@ RUN cd frontend && npm install
 RUN cd frontend && npm run build
 #RUN rm -r freelancer4u-frontend
 
+
+WORKDIR /usr/src/app/backend  # Change directory to backend
+
+
 RUN sed -i 's/\r$//' mvnw
 RUN chmod +x mvnw
 RUN ./mvnw package
