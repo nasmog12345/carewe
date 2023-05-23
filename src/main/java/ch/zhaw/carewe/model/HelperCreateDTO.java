@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 public class HelperCreateDTO {
     private String name;
+    private String address;
     private String email;
     private List<String> skills;
     private String bio;

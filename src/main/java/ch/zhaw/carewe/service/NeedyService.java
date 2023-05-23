@@ -1,5 +1,6 @@
 package ch.zhaw.carewe.service;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,11 @@ public class NeedyService {
     @Autowired
     HelperRepository helperRepository;
 
+    public List<Needy> getAssignedNeedyForCurrentUser(String userEmail) {
+        return needyRepository.findByHelperEmail(userEmail);
+    }
+   
+
     public Optional<Needy> assignNeedy(String needyId, String helperEmail) {
         Optional<Needy> needyToAssign = needyRepository.findById(needyId);
         if (needyToAssign.isPresent()) {
@@ -26,7 +32,7 @@ public class NeedyService {
                 Helper helper = helperRepository.findFirstByEmail(helperEmail);
                 if (helper != null) {
                     needy.setNeedyState(NeedyState.ASSIGNED);
-                    //needy.setHelperId(helper.getId());
+                    needy.setHelperId(helper.getId());
                     needyRepository.save(needy);
                     return Optional.of(needy);
                 }
@@ -35,19 +41,23 @@ public class NeedyService {
         return Optional.empty();
     }
 
-    public Optional<Needy> completeNeed(String needyid, String email) {
-        Optional<Needy> searchedNeedy = needyRepository.findById(needyid);
-        if (searchedNeedy.isPresent()) {
-            Needy needy = searchedNeedy.get();
-            if (needy.getEmail() == email && needy.getNeedyState() == NeedyState.ASSIGNED
-                    /*&& needy.getHelperId() == needyid*/) {
-                needy.setNeedyState(NeedyState.DONE);
-                needyRepository.save(needy);
-                return Optional.of(needy);
+    public Optional<Needy> completeNeedy(String needyId, String helperEmail) {
+        Optional<Needy> needyToAssign = needyRepository.findById(needyId);
+        if (needyToAssign.isPresent()) {
+            Needy needy = needyToAssign.get();
+            if (needy.getNeedyState() == NeedyState.ASSIGNED) {
+                Helper helper = helperRepository.findFirstByEmail(helperEmail);
+                if (helper != null) {
+                    if (needy.getHelperId().equals(helper.getId())) {
+                        needy.setNeedyState(NeedyState.DONE);
+                        needyRepository.save(needy);
+                        return Optional.of(needy);
+                    }
+                }
             }
-
         }
-
         return Optional.empty();
     }
+
+   
 }

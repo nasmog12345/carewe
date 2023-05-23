@@ -20,7 +20,6 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import ch.zhaw.carewe.repository.HelperRepository;
 
-
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
@@ -35,14 +34,20 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers("/*").permitAll()
-                .requestMatchers("/api/*").authenticated()
-                .requestMatchers("/build/*").permitAll()
-                .and().cors(withDefaults())
-                .oauth2ResourceServer(server -> server.jwt()
-                    .decoder(jwtDecoder())
-                    .jwtAuthenticationConverter(new RoleExtractor()));
-               
+    .requestMatchers("/api/**", "/api/helper*", "/api/helper").permitAll()
+    .requestMatchers("/api/needy/{id}").permitAll()
+    .requestMatchers("/api/needy", "/api/needy/*", "/api/needies/*").permitAll()
+    .requestMatchers("/api/rating/*").permitAll()
+    .requestMatchers("/api/rating/helper/*").permitAll()
+    .requestMatchers("/api/*").permitAll()
+    .requestMatchers("/bilder/*").permitAll()  // Allow access to all images in the /bilder path
+    .requestMatchers("/*").permitAll()
+    .requestMatchers("/build/*").permitAll()
+            .and().cors(withDefaults())
+            .oauth2ResourceServer(server -> server.jwt()
+                .decoder(jwtDecoder())
+                .jwtAuthenticationConverter(new RoleExtractor()));
+
         return http.build();
     }
 
@@ -56,4 +61,3 @@ public class SecurityConfig {
         return jwtDecoder;
     }
 }
-

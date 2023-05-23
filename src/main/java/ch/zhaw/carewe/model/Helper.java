@@ -20,6 +20,8 @@ public class Helper {
     @NonNull
     private String name;
     @NonNull
+    private String address;
+    @NonNull
     private String email;
     @NonNull
     private List<String> skills;
@@ -27,5 +29,6 @@ public class Helper {
     private String bio;
     @NonNull
     private HelperState helperState;
+    
 
 }

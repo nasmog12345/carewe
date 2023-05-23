@@ -14,5 +14,6 @@ public class NeedyCreateDTO {
     private List<String> needs;
     private String notes;
     private NeedyState needyState;
+ private String helperId;
  
 }

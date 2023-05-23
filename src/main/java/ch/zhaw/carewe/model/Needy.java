@@ -33,5 +33,6 @@ public class Needy {
     String notes;
     @NonNull
     private NeedyState needyState;
-
+    private String helperId;
+    private String helperEmail;
 }
