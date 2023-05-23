@@ -15,6 +15,7 @@ RUN cd frontend && npm run build
 WORKDIR /usr/src/app/backend  # Change directory to backend
 
 
+RUN ls -la
 RUN sed -i 's/\r$//' mvnw
 RUN chmod +x mvnw
 RUN ./mvnw package
