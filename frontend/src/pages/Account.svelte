@@ -1,5 +1,30 @@
 <script>
     import { isAuthenticated, user } from "../store";
+    import { jwt_token} from "../store";
+    import axios from "axios";
+
+    const api_root = "http://localhost:8080";
+    let assignedNeedies = [];
+
+function getAssignedNeedies() {
+    var config = {
+        method: "get",
+        url: api_root + "/api/me/assignedneedy",
+        headers: { "Authorization": "Bearer " + $jwt_token },
+    };
+
+    axios(config)
+        .then(function (response) {
+            assignedNeedies = response.data;
+        })
+        .catch(function (error) {
+            alert("Could not get assigned needies");
+            console.log(error);
+        });
+}
+
+getAssignedNeedies();
+
 </script>
 
 <h1>Account Details</h1>
@@ -16,3 +41,10 @@
 {:else}
     <p>Not logged in</p>
 {/if}
+
+<h2>Assigned Needies</h2>
+<ul>
+  {#each assignedNeedies as needy}
+    <li>{needy.name}</li>
+  {/each}
+</ul>

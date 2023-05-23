@@ -19,25 +19,7 @@ helperState: null,
       //helperState: null,
     };
   
-    function getHelpers() {
-  axios
-    .get(api_root + "/api/helper", {
-      headers: {
-        "Authorization": "Bearer " + $jwt_token,
-      },
-    })
-    .then(function (response) {
-      helpers = response.data;
-    })
-    .catch(function (error) {
-      alert("Could not get helpers");
-      console.log(error);
-    });
-}
-
-    
-
-
+   
     function createHelper() {
       axios
         .post(api_root + "/api/helper", helper, {
@@ -48,7 +30,7 @@ helperState: null,
         })
         .then(function (response) {
           alert("Helper created");
-          getHelpers();
+         
         })
         .catch(function (error) {
           alert("Could not create Helper");
@@ -56,11 +38,27 @@ helperState: null,
         });
     }
   
-    onMount(() => {
-      getHelpers();
-    });
-    
+
+    function navigateCreateHelper() {
+        location.href = '#/helperhome';
+    }
+
+    function navigateAllHelpers() {
+        location.href = '#/allhelper';
+    }
+
+    function handleNavigation() {
+    location.href = "#/helperhome";
+  }
+
+
   </script>
+  
+  
+<button type="button" class="btn" on:click={navigateAllHelpers}>See all Helpers</button>
+<button type="button" class="btn btn-primary" on:click={navigateCreateHelper}>
+    zurück
+  </button>
   
   <h1 class="mt-3">Create Helper</h1>
   <form class="mb-5">
@@ -145,30 +143,4 @@ helperState: null,
       Submit
     </button>
   </form>
-  
-  <h1>All helpers</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Adresse</th>
-        <th scope="col">E-Mail</th>
-        <th scope="col">Skills</th>
-        <th scope="col">Bio</th>
-        <th scope="col">Helperstate</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each helpers as helper}
-      <tr>
-        <td>{helper.name}</td>
-        <td>{helper.address}</td>
-        <td>{helper.email}</td>
-        <td>{helper.skills}</td>
-        <td>{helper.bio}</td>
-        <td>{helper.helperState}</td>
-      </tr>
-      {/each}
-    </tbody>
-  </table>
   

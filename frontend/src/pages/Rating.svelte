@@ -1,24 +1,29 @@
 <script>
   import axios from "axios";
   import { user, jwt_token } from "../store";
+  import GetRating from "./GetRating.svelte";
   const api_root = "http://localhost:8080";
+
   
   const urlParam = window.location.href.split('/')[5];
 
   let rating = {
       titel: "",
       name: "",
-      zahl: "",
+        zahl: "",
       rezession: "",
       helperId: urlParam
   };
+let clicked = false;
+
 
   function createRating() {
       var config = {
           method: "post",
           url: api_root + "/api/rating",
           headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "Authorization": "Bearer " + $jwt_token,
           },
           data: rating
       };
@@ -38,10 +43,16 @@
     event.preventDefault();
     createRating();
   }
+
+  function toggle(){
+    clicked = !clicked;
+  }
 </script>
 
 <!-- nur admins können rating verfassen-->
 {#if $user.user_roles && $user.user_roles.includes("admin")}
+<button on:click={toggle}>Create Needy</button>
+{#if clicked}
 <form on:submit={handleSubmit}>
   <label for="titel">Titel</label>
   <input type="text" id="titel" bind:value={rating.titel} />
@@ -58,5 +69,7 @@
 
   <button type="submit">Submit</button>
 </form>
+{/if}
 
+<GetRating/>
 {/if}

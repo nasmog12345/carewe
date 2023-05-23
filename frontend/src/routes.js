@@ -1,22 +1,30 @@
-
-import Home from "./pages/Home.svelte";
+import NeedyHome from "./pages/NeedyHome.svelte";
 import Helper from "./pages/Helper.svelte";
-import Needy from "./pages/Needy.svelte";
 import Search from "./pages/Search.svelte";
-import HelperId from "./pages/HelperId.svelte"
-import Account from "./pages/Account.svelte"
-
+import HelperId from "./pages/HelperDetails.svelte";
+import Account from "./pages/Account.svelte";
+import NeedyDetails from "./pages/NeedyDetails.svelte";
+import CreateNeedy from "./pages/CreateNeedy.svelte";
+import CreateHelper from "./pages/CreateHelper.svelte"
+import Start from "./pages/Start.svelte";
+import HelperHome from "./pages/HelperHome.svelte";
+import AllNeedy from "./pages/AllNeedy.svelte";
+import AllHelper from "./pages/AllHelper.svelte"
+import HelperDetails from "./pages/HelperDetails.svelte"
 
 export default {
-  '/': Home,
-  '/home': Home,
-  '/helpers': Helper,
-  '/needies': Needy,
-  '/search': Search,
-  '/helper/:id': HelperId,
-  '/account' : Account,
-  
-
-  
-}
-
+  "/": Start,
+  //'/': Home,
+  // '/home': Home,
+  "/helpers": Helper,
+  "/needyhome": NeedyHome,
+  "/helperhome": HelperHome,
+  "/needy": CreateNeedy,
+  "/helper": CreateHelper,
+  "/search": Search,
+  "/helper/:id": HelperDetails,
+  "/needy/:id": NeedyDetails,
+  "/account": Account,
+  "/allneedy": AllNeedy,
+  "/allhelper": AllHelper,
+};
