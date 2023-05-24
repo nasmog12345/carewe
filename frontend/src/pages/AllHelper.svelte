@@ -2,17 +2,32 @@
     import { onMount } from "svelte";
     import axios from "axios";
     import { jwt_token} from "../store";
- 
+    import { querystring } from "svelte-spa-router";
   
     const api_root = "http://localhost:8080";
   
     let helpers = [];
+
+    let currentPage;
+let nrOfPages = 0;
+let defaultPageSize = 4;
+
+$: {
+let searchParams = new URLSearchParams($querystring);
+if (searchParams.has("page")) {
+currentPage = searchParams.get("page");
+} else {
+currentPage = "1";
+}
+getHelpers();
+}
  
   
     function getHelpers() {
+      let query = "?pageSize=" + defaultPageSize + " &pageNumber=" + currentPage;
     var config = {
         method: 'get',
-        url: api_root + "/api/helper",
+        url: api_root + "/api/helper" + query,
         headers: {
         "Authorization": "Bearer " + $jwt_token,
       },
@@ -20,7 +35,8 @@
 
     axios(config)
     .then(function (response) {
-        helpers = response.data;
+        helpers = response.data.content;
+        nrOfPages = response.data.totalPages;
     })
     .catch(function (error) {
         alert("Could not get helpers");
@@ -35,12 +51,14 @@ function navigateCreateHelper() {
     location.href = "#/helperhome";
   }
 
-  
+  /*
     onMount(() => {
       getHelpers();
-    });
+    });*/
     
   </script>
+
+<img src="/bilder/6.png" alt="img" class="angepasstes-bild">
 
   <button type="button" class="btn" on:click={navigateCreateHelper}>Create Helper</button>
   <button type="button" class="btn" on:click={handleNavigation}>zurück</button>
@@ -71,3 +89,16 @@ function navigateCreateHelper() {
     </tbody>
   </table>
   
+  <nav>
+    <ul class="pagination">
+    {#each Array(nrOfPages) as _, i}
+    <li class="page-item">
+    <a
+    class="page-link"
+    class:active={currentPage == i + 1}
+    href={"#/allhelper?page=" + (i + 1)}>{i + 1}
+    </a>
+    </li>
+    {/each}
+    </ul>
+    </nav>

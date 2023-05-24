@@ -3,6 +3,7 @@
     import { user, jwt_token } from "../store";
     const api_root = "http://localhost:8080";
     
+    
     const urlParam = window.location.href.split('/')[5];
     console.log(urlParam)
   
@@ -14,8 +15,8 @@
         rezession: "",
         helperId: "",
     };
-  
-  
+    let average = 0;
+      
     function getRating() {
         var config = {
             method: "get",
@@ -29,16 +30,29 @@
         axios(config)
             .then(function (response) {
                 ratings = response.data;
+                durchschnitt();
             })
             .catch(function (error) {
                 alert("Could not get rating");
                 console.log(error);
             });
     }
+   
+
+    function durchschnitt(){
+        let total = 0;
+        for (let rating of ratings) {
+            total += rating.zahl;
+        }
+        average = total / ratings.length;
+    }
   
     getRating();
    
   </script>
+
+<p>Durchschnittliche Bewertung: {average}</p>
+
   <div class="wrapper">
 <div class="output-container">
     {#each ratings as rating}
@@ -52,3 +66,4 @@
     {/each}
   </div>
   </div>
+  

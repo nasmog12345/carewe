@@ -32,22 +32,34 @@ public class NeedyController {
     @Autowired
     private NeedyRepository needyRepository;
 
-@Autowired
-private HelperRepository helperRepository;
+    @Autowired
+    private HelperRepository helperRepository;
 
+    @CrossOrigin(origins = "http://localhost:8081")
     @GetMapping("/me/assignedneedy")
-public ResponseEntity<List<Needy>> getAssignedNeedyForCurrentUser(@AuthenticationPrincipal Jwt jwt) {
-    String userEmail = jwt.getClaimAsString("email");
-    Helper helper = helperRepository.findFirstByEmail(userEmail);
-    if (helper != null) {
-        List<Needy> assignedNeedy = needyRepository.findByHelperId(helper.getId());
-        if (!assignedNeedy.isEmpty()) {
-            return new ResponseEntity<>(assignedNeedy, HttpStatus.OK);
+    public ResponseEntity<List<Needy>> getAssignedNeedyForCurrentUser(@AuthenticationPrincipal Jwt jwt) {
+        String userEmail = jwt.getClaimAsString("email");
+        Helper helper = helperRepository.findFirstByEmail(userEmail);
+        if (helper != null) {
+            List<Needy> assignedNeedy = needyRepository.findByHelperId(helper.getId());
+            if (!assignedNeedy.isEmpty()) {
+                return new ResponseEntity<>(assignedNeedy, HttpStatus.OK);
+            }
         }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-}
 
+    @CrossOrigin(origins = "http://localhost:8081")
+    @GetMapping("/needy/me/assignedneedy/{helperId}")
+    public ResponseEntity<List<Needy>> getAssignedNeedyForUser(@PathVariable String helperId) {
+        List<Needy> assignedNeedies = needyRepository.findByHelperId(helperId);
+        if (!assignedNeedies.isEmpty()) {
+            return new ResponseEntity<>(assignedNeedies, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    
+    
 
     @CrossOrigin(origins = "http://localhost:8081")
     @PostMapping("/needy")
@@ -72,12 +84,12 @@ public ResponseEntity<List<Needy>> getAssignedNeedyForCurrentUser(@Authenticatio
     @CrossOrigin(origins = "http://localhost:8081")
     @GetMapping("/needy")
     public ResponseEntity<Page<Needy>> getNeedyByAddressOrNeeds(
-        @RequestParam(required = false) String address,
-        @RequestParam(required = false) List<String> needs,
-        @RequestParam(required = false, defaultValue = "1") Integer pageNumber,
-        @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
-        
-                Page<Needy> needyList;
+            @RequestParam(required = false) String address,
+            @RequestParam(required = false) List<String> needs,
+            @RequestParam(required = false, defaultValue = "1") Integer pageNumber,
+            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        Page<Needy> needyList;
 
         if (address != null && !address.isEmpty()) {
             needyList = needyRepository.findByAddress(address, PageRequest.of(pageNumber - 1, pageSize));
@@ -101,9 +113,6 @@ public ResponseEntity<List<Needy>> getAssignedNeedyForCurrentUser(@Authenticatio
         }
     }
 
-    
-
-    
     /*
      * @CrossOrigin(origins = "http://localhost:8081")
      * 

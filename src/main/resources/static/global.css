@@ -5,6 +5,12 @@ body {
   color: #444; /* All text dark gray */
 }
 
+  .angepasstes-bild {
+    max-width: 100%;
+    height: 70%;
+  }
+
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

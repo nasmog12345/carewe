@@ -9,7 +9,7 @@ COPY . .
 
 RUN cd frontend && npm install
 RUN cd frontend && npm run build
-#RUN rm -r freelancer4u-frontend
+RUN rm -r frontend
 
 #RUN cd ../backend
 RUN sed -i 's/\r$//' mvnw
@@ -17,3 +17,4 @@ RUN chmod +x mvnw
 RUN ./mvnw package
 EXPOSE 8080
 CMD ["java", "-jar", "/usr/src/app/target/carewe-0.0.1-SNAPSHOT.jar"]
+

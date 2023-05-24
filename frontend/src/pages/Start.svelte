@@ -1,10 +1,9 @@
-<script>
-</script>
+
 
 <style>
   .box {
     display: flex;
-    justify-content: center;
+    justify-content: space-around; /* Use space-around to give some space between the images */
     align-items: center;
     width: 100%;
     height: 100vh;
@@ -12,7 +11,7 @@
   }
 
   .image {
-    width: 100%;
+    width: 45%; /* Adjust the width so two images can fit side by side */
     height: 100%;
   }
 
@@ -31,20 +30,18 @@
 
 <h1 style="text-align: center;">Ich bin...</h1>
 
-<h1>Hilfsbedürftiger</h1>
-<a href="/#/needyhome">
-  <div class="box">
-    <div class="image">
+<div class="box">
+  <div class="image">
+    <h1>Hilfsbedürftiger</h1>
+    <a href="/#/needyhome">
       <img src="/bilder/2.png" alt="Needy">
-    </div>
+    </a>
   </div>
-</a>
-
-<h1>Helfer</h1>
-<a href="/#/helperhome">
-  <div class="box">
-    <div class="image">
+  
+  <div class="image">
+    <h1>Helfer</h1>
+    <a href="/#/helperhome">
       <img src="/bilder/3.png" alt="Helper">
-    </div>
+    </a>
   </div>
-</a>
+</div>

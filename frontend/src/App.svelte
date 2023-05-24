@@ -56,6 +56,7 @@ import auth from "./auth.service";
 						<a class="nav-link" href="#/account">Mein Profil</a>
 					</li>
 					{/if}
+				
 				</ul>
 				<div class="d-flex">
 					{#if $isAuthenticated}

@@ -10,6 +10,7 @@
 let nrOfPages = 0;
 let defaultPageSize = 10;
 let needyState;
+let message = '';
   
     let needies = [];
 
@@ -51,6 +52,7 @@ getNeedies();
       axios(config)
         .then(function (response) {
           getNeedies(); // or whatever function you use to refresh your needy list
+          message = "Die Nummer des Needy ist nun für die Kontaktaufnahme verfügbar"; // Set the message text
         })
         .catch(function (error) {
           alert("Could not assign needy to me");
@@ -86,6 +88,14 @@ getNeedies();
   
    
   </script>
+<img src="/bilder/6.png" alt="img" class="angepasstes-bild">
+
+{#if message}
+<div class="alert alert-success">
+  {message}
+</div>
+{/if}
+
   
   <button type="button" class="btn" on:click={navigateCreateNeedy}>Create Needy</button>
   <button type="button" class="btn" on:click={handleNavigation}>zurück</button>
@@ -126,12 +136,19 @@ getNeedies();
       {#each needies as needy}
       <tr>
         <td>{needy.name}</td>
-        <td>{needy.email}</td>
+        <td>{#if needy.needyState === "ASSIGNED" && needy.helperId === $myHelperId}{needy.email}{/if}</td>
         <td>{needy.address}</td>
-        <td>{needy.number}</td>
+        <td> {#if needy.needyState === "ASSIGNED" && needy.helperId === $myHelperId}
+          {needy.number}
+        {/if}</td>
         <td>{needy.needs.join(", ")}</td>
         <td>{needy.notes}</td>
-        <td>{needy.helperId}</td>
+        <td>{#if needy.helperId !== $myHelperId}
+        <p>assigned to other person</p>
+      {:else} 
+      {needy.helperId} 
+      {/if}
+      </td>
         <td>
           {#if needy.needyState === "ASSIGNED"}
             <span class="badge bg-secondary">Assigned</span>
