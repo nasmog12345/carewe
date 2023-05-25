@@ -5,12 +5,13 @@ import HelperId from "./pages/HelperDetails.svelte";
 import Account from "./pages/Account.svelte";
 import NeedyDetails from "./pages/NeedyDetails.svelte";
 import CreateNeedy from "./pages/CreateNeedy.svelte";
-import CreateHelper from "./pages/CreateHelper.svelte"
+import CreateHelper from "./pages/CreateHelper.svelte";
 import Start from "./pages/Start.svelte";
 import HelperHome from "./pages/HelperHome.svelte";
 import AllNeedy from "./pages/AllNeedy.svelte";
-import AllHelper from "./pages/AllHelper.svelte"
-import HelperDetails from "./pages/HelperDetails.svelte"
+import AllHelper from "./pages/AllHelper.svelte";
+import HelperDetails from "./pages/HelperDetails.svelte";
+import WeatherAPI from "./pages/WeatherAPI.svelte";
 
 export default {
   "/": Start,
@@ -27,4 +28,5 @@ export default {
   "/account": Account,
   "/allneedy": AllNeedy,
   "/allhelper": AllHelper,
+  "/weather": WeatherAPI,
 };

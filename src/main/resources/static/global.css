@@ -84,34 +84,57 @@ a {
   background-color: #0056b3;
 }
 
-/* Example navigation styles */
 .navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #fff;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+  font-size: 26px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
+  list-style: none;
 }
 
-.navbar li {
-  margin-right: 10px;
+.navbar ul li {
+  margin-left: 25px;
 }
 
-.navbar a {
-  color: #fff;
+.navbar ul li a {
+  color: #b7b5b5;
   text-decoration: none;
-  padding: 5px;
-  border-radius: 4px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.navbar a:hover {
-  background-color: #555;
+.navbar ul li a:hover {
+  color: #007bff;
 }
+
+.navbar .cta {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.navbar .cta:hover {
+  background-color: #0056b3;
+}
+
+
 
 /* Search form styles */
 .search-form {

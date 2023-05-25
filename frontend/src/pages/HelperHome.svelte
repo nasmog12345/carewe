@@ -2,17 +2,33 @@
     import axios from 'axios';
     import { isAuthenticated } from '../store';
     import {jwt_token } from "../store";
+    import { querystring } from "svelte-spa-router";
   
     let helpers = [];
     let searchHelper = [];
     let helperon = false;
     let searchAddress = null;
+
+    let currentPage;
+let nrOfPages = 0;
+let defaultPageSize = 4;
+
+$: {
+let searchParams = new URLSearchParams($querystring);
+if (searchParams.has("page")) {
+currentPage = searchParams.get("page");
+} else {
+currentPage = "1";
+}
+getHelpers();
+}
   
     async function getHelpers() {
+        let query = "?pageSize=" + defaultPageSize + " &pageNumber=" + currentPage;
         try {
             const config = {
                 method: 'get',
-                url: 'http://localhost:8080/api/helper',
+                url: 'http://localhost:8080/api/helper' + query,
                 params: {
                     address: searchAddress,
                     skills: searchHelper.join(','),
@@ -22,7 +38,8 @@
 
             const response = await axios(config);
 
-            helpers = response.data;
+            helpers = response.data.content;
+            nrOfPages = response.data.totalPages;
         } catch (error) {
             console.error('An error occurred:', error);
         }
@@ -41,6 +58,7 @@
         helperon = true;
     }
 </script>
+
 
 <div class="container">
     <div class="search-section">
@@ -62,6 +80,20 @@
                 </div>
                 <button type="button" class="search-button" on:click="{getHelpers}" on:click={toggle}>Search</button>
             </form>
+
+            <nav style="padding: 11px;">
+                <ul class="pagination">
+                {#each Array(nrOfPages) as _, i}
+                <li class="page-item">
+                <a
+                class="page-link"
+                class:active={currentPage == i + 1}
+                href={"#/helperhome?page=" + (i + 1)}>{i + 1}
+                </a>
+                </li>
+                {/each}
+                </ul>
+                </nav>
         </div>
         <div class="search-results">
             {#if helperon && $isAuthenticated}
@@ -85,9 +117,8 @@
                                 <li>{helper.helperState}</li>
                             {/if}
                         </ul>
-                        {#if $isAuthenticated}
-                            <a href="#/helper">Change</a>
-                        {:else}
+                        {#if !$isAuthenticated}
+                     
                             <p>Please log in to see the full card</p>
                         {/if}
                     </div>
@@ -96,3 +127,4 @@
         </div>
     </div>
 </div>
+
