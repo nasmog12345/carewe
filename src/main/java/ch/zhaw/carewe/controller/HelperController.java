@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -42,19 +40,17 @@ public class HelperController {
 
     @CrossOrigin(origins = "http://localhost:8081")
     @GetMapping("/helper")
-    public ResponseEntity<Page<Helper>> getHelper(
+    public ResponseEntity<List<Helper>> getHelper(
             @RequestParam(required = false) List<String> skills,
-            @RequestParam(required = false) String address,
-            @RequestParam(required = false, defaultValue = "1") Integer pageNumber,
-            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
-        Page<Helper> helpers;
+            @RequestParam(required = false) String address) {
+        List<Helper> helpers;
 
         if (address != null && !address.isEmpty()) {
-            helpers = helperRepository.findByAddress(address , PageRequest.of(pageNumber - 1, pageSize));
+            helpers = helperRepository.findByAddress(address);
         } else if (skills != null && !skills.isEmpty()) {
-            helpers = helperRepository.findBySkillsIn(skills , PageRequest.of(pageNumber - 1, pageSize));
+            helpers = helperRepository.findBySkillsIn(skills);
         } else {
-            helpers = helperRepository.findAll(PageRequest.of(pageNumber - 1, pageSize));
+            helpers = helperRepository.findAll();
         }
 
         return new ResponseEntity<>(helpers, HttpStatus.OK);

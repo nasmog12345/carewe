@@ -34,21 +34,19 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers("/api/**", "/api/helper*", "/api/helper").permitAll()
-                .requestMatchers("/api/needy/{id}").permitAll()
-                .requestMatchers("/api/needy/me/**").permitAll()
-                .requestMatchers("/api/needy", "/api/needy/*", "/api/needies/*").permitAll()
-                .requestMatchers("/api/needy/me/assignedneedy/*").permitAll()
-                .requestMatchers("/api/rating/*").permitAll()
-                .requestMatchers("/api/rating/helper/*").permitAll()
-                .requestMatchers("/api/*").permitAll()
-                .requestMatchers("/bilder/*").permitAll() // Allow access to all images in the /bilder path
-                .requestMatchers("/*").permitAll()
-                .requestMatchers("/build/*").permitAll()
-                .and().cors(withDefaults())
-                .oauth2ResourceServer(server -> server.jwt()
-                        .decoder(jwtDecoder())
-                        .jwtAuthenticationConverter(new RoleExtractor()));
+    .requestMatchers("/api/**", "/api/helper*", "/api/helper").permitAll()
+    .requestMatchers("/api/needy/{id}").permitAll()
+    .requestMatchers("/api/needy", "/api/needy/*", "/api/needies/*").permitAll()
+    .requestMatchers("/api/rating/*").permitAll()
+    .requestMatchers("/api/rating/helper/*").permitAll()
+    .requestMatchers("/api/*").permitAll()
+    .requestMatchers("/bilder/*").permitAll()  // Allow access to all images in the /bilder path
+    .requestMatchers("/*").permitAll()
+    .requestMatchers("/build/*").permitAll()
+            .and().cors(withDefaults())
+            .oauth2ResourceServer(server -> server.jwt()
+                .decoder(jwtDecoder())
+                .jwtAuthenticationConverter(new RoleExtractor()));
 
         return http.build();
     }

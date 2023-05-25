@@ -13,11 +13,10 @@ import ch.zhaw.carewe.model.NeedyStateAggregation;
 
 public interface NeedyRepository extends MongoRepository<Needy, String> {
     List<Needy> findByHelperId(String helperId);
-       Page<Needy> findByNeedsIn(List<String> needs, Pageable pageable);
+    Page<Needy> findByNeedsIn(List<String> needs, Pageable pageable);
     List<Needy> findByHelperEmail(String helperEmail);
     Page<Needy> findByAddress(String address, Pageable pageable);
     List<Needy> findByNeedyState(NeedyState needyState);
-    List<Needy> findByEmail(String email);
     @Aggregation(
         "{$group:{_id:'$needyState',needyIds:{$push:'$_id',},count:{$count:{}}}}")
         List<NeedyStateAggregation> getNeedyStateAggregation();

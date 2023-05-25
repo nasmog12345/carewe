@@ -54,9 +54,6 @@ getNeedies();
     needyon = !needyon;
   }
 </script>
-
-<img src="/bilder/8.png" alt="img" class="angepasstes-bild">
-
   
   <div class="container">
     <div class="search-section">
