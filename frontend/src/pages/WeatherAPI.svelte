@@ -26,6 +26,8 @@
         padding: 1em;
       }
     </style>
+
+    <p>Sie befinden sich derzeit in der Umgebung von Zürich und haben eine Arbeit im Freien zu erledigen? Hier finden Sie Informationen zum aktuellen Wetter in dieser Region.</p>
     
     {#if weatherData}
       {#each weatherData.daily.time as day, index}

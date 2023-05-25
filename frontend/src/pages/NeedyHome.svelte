@@ -104,7 +104,9 @@ getNeedies();
         <div class="card">
           <div class="card-body">
             <ul>
+              <p>  NAME, ADRESSE,SKILLS, BIO, ZUSTAND </p>
               {#if $isAuthenticated}
+              
               <li><a href={`#/needy/${needy.id}`}>{needy.name}</a></li>
               {/if}
               <li>{needy.address}</li>

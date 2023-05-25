@@ -105,6 +105,7 @@ getHelpers();
                 <div class="card">
                     <div class="card-body">
                         <ul>
+                          <p>  NAME, ADRESSE,SKILLS, BIO, ZUSTAND </p>
                             {#if $isAuthenticated}
                                 <li><a href={`#/helper/${helper.id}`}>{helper.name}</a></li>
                             {/if}
