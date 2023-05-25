@@ -9,8 +9,9 @@ COPY . .
 
 RUN cd frontend && npm install
 RUN cd frontend && npm run build
-#RUN rm -r frontend
+#RUN rm -r freelancer4u-frontend
 
+#RUN cd ../backend
 RUN sed -i 's/\r$//' mvnw
 RUN chmod +x mvnw
 RUN ./mvnw package
