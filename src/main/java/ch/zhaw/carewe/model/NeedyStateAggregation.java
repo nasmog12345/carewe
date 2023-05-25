@@ -10,4 +10,5 @@ public class NeedyStateAggregation {
     private String id;
     private List<String> needyIds;
     private String count;
+    
 }
