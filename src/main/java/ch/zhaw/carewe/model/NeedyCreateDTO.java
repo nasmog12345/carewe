@@ -3,9 +3,11 @@ package ch.zhaw.carewe.model;
 import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Getter
+@Setter
 public class NeedyCreateDTO {
     private String name;
     private String email;

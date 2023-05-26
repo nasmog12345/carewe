@@ -1,7 +1,7 @@
 package ch.zhaw.carewe.security;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;
