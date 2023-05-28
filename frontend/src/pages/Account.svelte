@@ -3,7 +3,7 @@
     import { jwt_token} from "../store";
     import axios from "axios";
 
-    const api_root = "http://localhost:8080";
+    const api_root = window.location.origin;
     let assignedNeedies = [];
 
 function getAssignedNeedies() {

@@ -3,7 +3,7 @@
   import Rating from './Rating.svelte';
   import { jwt_token} from "../store";
 
-  const api_root = 'http://localhost:8080';
+  const api_root = window.location.origin;
   export let params = {};
 
   let helpers = [];

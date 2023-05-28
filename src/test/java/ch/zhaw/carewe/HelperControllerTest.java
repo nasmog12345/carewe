@@ -41,8 +41,6 @@ public class HelperControllerTest {
     @BeforeEach
     void setUp() {
         helper = new Helper();
-        // Setzen Sie hier die Werte für die Helper-Objekte.
-
         pageable = PageRequest.of(0, 10);
         pageHelpers = new PageImpl<>(Arrays.asList(helper));
 
@@ -52,8 +50,6 @@ public class HelperControllerTest {
     @Test
     void getHelpersTest() {
         ResponseEntity<Page<Helper>> response = helperController.getHelper(null, null, 1, 10);
-
-        // Prüfen, ob die findAll-Methode aufgerufen wurde
         verify(helperRepository).findAll(pageable);
 
         assertEquals(pageHelpers, response.getBody());
@@ -62,7 +58,6 @@ public class HelperControllerTest {
 
     @Test
     void createHelperTest() {
-        // Erstellen Sie ein Mock HelperCreateDTO
         HelperCreateDTO mockHelperCreateDTO = new HelperCreateDTO();
         mockHelperCreateDTO.setName("Test Name");
         mockHelperCreateDTO.setAddress("Test Address");
@@ -70,25 +65,17 @@ public class HelperControllerTest {
         mockHelperCreateDTO.setSkills(Arrays.asList("Skill1", "Skill2"));
         mockHelperCreateDTO.setBio("Test Bio");
         mockHelperCreateDTO.setHelperState(HelperState.UNALLOCATED);
-        // Hier setzen Sie die restlichen Werte für das mockHelperCreateDTO, falls
-        // vorhanden
 
-        // Erstellen Sie ein Mock Helper
         Helper mockHelper = new Helper(mockHelperCreateDTO.getName(), mockHelperCreateDTO.getAddress(),
                 mockHelperCreateDTO.getEmail(), mockHelperCreateDTO.getSkills(),
                 mockHelperCreateDTO.getBio(), mockHelperCreateDTO.getHelperState());
 
-        // Mocken Sie das Verhalten der save-Methode
         Mockito.when(helperRepository.save(any(Helper.class))).thenReturn(mockHelper);
-
-        // Testen Sie die Methode
         ResponseEntity<Helper> response = helperController.createHelper(mockHelperCreateDTO);
 
-        // Überprüfen Sie das Ergebnis
         assertEquals(mockHelper, response.getBody());
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
 
-        // Überprüfen Sie, ob die save-Methode aufgerufen wurde
         verify(helperRepository).save(any(Helper.class));
     }
 }

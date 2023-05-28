@@ -5146,22 +5146,22 @@ var app = (function () {
 
     function get_each_context$8(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[14] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
-    	child_ctx[18] = i;
+    	child_ctx[17] = list[i];
+    	child_ctx[19] = i;
     	return child_ctx;
     }
 
-    // (81:10) {#each Array(nrOfPages) as _, i}
+    // (82:10) {#each Array(nrOfPages) as _, i}
     function create_each_block_1$3(ctx) {
     	let li;
     	let a;
-    	let t0_value = /*i*/ ctx[18] + 1 + "";
+    	let t0_value = /*i*/ ctx[19] + 1 + "";
     	let t0;
     	let t1;
 
@@ -5172,11 +5172,11 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(a, "class", "page-link");
-    			attr_dev(a, "href", "#/needyhome?page=" + (/*i*/ ctx[18] + 1));
-    			toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[18] + 1);
-    			add_location(a, file$h, 82, 10, 2513);
+    			attr_dev(a, "href", "#/needyhome?page=" + (/*i*/ ctx[19] + 1));
+    			toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[19] + 1);
+    			add_location(a, file$h, 83, 10, 2545);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$h, 81, 10, 2479);
+    			add_location(li, file$h, 82, 10, 2511);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -5186,7 +5186,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*currentPage*/ 16) {
-    				toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[18] + 1);
+    				toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[19] + 1);
     			}
     		},
     		d: function destroy(detaching) {
@@ -5198,14 +5198,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(81:10) {#each Array(nrOfPages) as _, i}",
+    		source: "(82:10) {#each Array(nrOfPages) as _, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:8) {#if needyon && $isAuthenticated}
+    // (97:8) {#if needyon && $isAuthenticated}
     function create_if_block_3$3(ctx) {
     	let button0;
     	let t1;
@@ -5227,11 +5227,11 @@ var app = (function () {
     			h1.textContent = "All Needies";
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn");
-    			add_location(button0, file$h, 96, 8, 2853);
+    			add_location(button0, file$h, 97, 8, 2885);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn");
-    			add_location(button1, file$h, 97, 8, 2949);
-    			add_location(h1, file$h, 100, 8, 3065);
+    			add_location(button1, file$h, 98, 8, 2981);
+    			add_location(h1, file$h, 101, 8, 3097);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button0, anchor);
@@ -5265,18 +5265,18 @@ var app = (function () {
     		block,
     		id: create_if_block_3$3.name,
     		type: "if",
-    		source: "(96:8) {#if needyon && $isAuthenticated}",
+    		source: "(97:8) {#if needyon && $isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (108:14) {#if $isAuthenticated}
+    // (109:14) {#if $isAuthenticated}
     function create_if_block_2$3(ctx) {
     	let li;
     	let a;
-    	let t_value = /*needy*/ ctx[13].name + "";
+    	let t_value = /*needy*/ ctx[14].name + "";
     	let t;
     	let a_href_value;
 
@@ -5285,9 +5285,9 @@ var app = (function () {
     			li = element("li");
     			a = element("a");
     			t = text(t_value);
-    			attr_dev(a, "href", a_href_value = `#/needy/${/*needy*/ ctx[13].id}`);
-    			add_location(a, file$h, 109, 18, 3360);
-    			add_location(li, file$h, 109, 14, 3356);
+    			attr_dev(a, "href", a_href_value = `#/needy/${/*needy*/ ctx[14].id}`);
+    			add_location(a, file$h, 110, 18, 3392);
+    			add_location(li, file$h, 110, 14, 3388);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -5295,9 +5295,9 @@ var app = (function () {
     			append_dev(a, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*needies*/ 1 && t_value !== (t_value = /*needy*/ ctx[13].name + "")) set_data_dev(t, t_value);
+    			if (dirty & /*needies*/ 1 && t_value !== (t_value = /*needy*/ ctx[14].name + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*needies*/ 1 && a_href_value !== (a_href_value = `#/needy/${/*needy*/ ctx[13].id}`)) {
+    			if (dirty & /*needies*/ 1 && a_href_value !== (a_href_value = `#/needy/${/*needy*/ ctx[14].id}`)) {
     				attr_dev(a, "href", a_href_value);
     			}
     		},
@@ -5310,31 +5310,31 @@ var app = (function () {
     		block,
     		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(108:14) {#if $isAuthenticated}",
+    		source: "(109:14) {#if $isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (115:14) {#if $isAuthenticated}
+    // (116:14) {#if $isAuthenticated}
     function create_if_block_1$5(ctx) {
     	let li;
-    	let t_value = /*needy*/ ctx[13].needyState + "";
+    	let t_value = /*needy*/ ctx[14].needyState + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			li = element("li");
     			t = text(t_value);
-    			add_location(li, file$h, 115, 14, 3615);
+    			add_location(li, file$h, 116, 14, 3647);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
     			append_dev(li, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*needies*/ 1 && t_value !== (t_value = /*needy*/ ctx[13].needyState + "")) set_data_dev(t, t_value);
+    			if (dirty & /*needies*/ 1 && t_value !== (t_value = /*needy*/ ctx[14].needyState + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -5345,14 +5345,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(115:14) {#if $isAuthenticated}",
+    		source: "(116:14) {#if $isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (120:12) {#if !$isAuthenticated}
+    // (121:12) {#if !$isAuthenticated}
     function create_if_block$8(ctx) {
     	let p;
 
@@ -5360,7 +5360,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Please log in to see the full card";
-    			add_location(p, file$h, 121, 14, 3749);
+    			add_location(p, file$h, 122, 14, 3781);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -5374,14 +5374,14 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(120:12) {#if !$isAuthenticated}",
+    		source: "(121:12) {#if !$isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (103:8) {#each needies as needy (needy.id)}
+    // (104:8) {#each needies as needy (needy.id)}
     function create_each_block$8(key_1, ctx) {
     	let div1;
     	let div0;
@@ -5390,15 +5390,15 @@ var app = (function () {
     	let t1;
     	let t2;
     	let li0;
-    	let t3_value = /*needy*/ ctx[13].address + "";
+    	let t3_value = /*needy*/ ctx[14].address + "";
     	let t3;
     	let t4;
     	let li1;
-    	let t5_value = /*needy*/ ctx[13].needs.join(", ") + "";
+    	let t5_value = /*needy*/ ctx[14].needs.join(", ") + "";
     	let t5;
     	let t6;
     	let li2;
-    	let t7_value = /*needy*/ ctx[13].notes + "";
+    	let t7_value = /*needy*/ ctx[14].notes + "";
     	let t7;
     	let t8;
     	let t9;
@@ -5432,15 +5432,15 @@ var app = (function () {
     			t9 = space();
     			if (if_block2) if_block2.c();
     			t10 = space();
-    			add_location(p, file$h, 106, 14, 3242);
-    			add_location(li0, file$h, 111, 14, 3450);
-    			add_location(li1, file$h, 112, 14, 3490);
-    			add_location(li2, file$h, 113, 14, 3539);
-    			add_location(ul, file$h, 105, 12, 3222);
+    			add_location(p, file$h, 107, 14, 3274);
+    			add_location(li0, file$h, 112, 14, 3482);
+    			add_location(li1, file$h, 113, 14, 3522);
+    			add_location(li2, file$h, 114, 14, 3571);
+    			add_location(ul, file$h, 106, 12, 3254);
     			attr_dev(div0, "class", "card-body");
-    			add_location(div0, file$h, 104, 10, 3185);
+    			add_location(div0, file$h, 105, 10, 3217);
     			attr_dev(div1, "class", "card");
-    			add_location(div1, file$h, 103, 8, 3155);
+    			add_location(div1, file$h, 104, 8, 3187);
     			this.first = div1;
     		},
     		m: function mount(target, anchor) {
@@ -5481,9 +5481,9 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty & /*needies*/ 1 && t3_value !== (t3_value = /*needy*/ ctx[13].address + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*needies*/ 1 && t5_value !== (t5_value = /*needy*/ ctx[13].needs.join(", ") + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*needies*/ 1 && t7_value !== (t7_value = /*needy*/ ctx[13].notes + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*needies*/ 1 && t3_value !== (t3_value = /*needy*/ ctx[14].address + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*needies*/ 1 && t5_value !== (t5_value = /*needy*/ ctx[14].needs.join(", ") + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*needies*/ 1 && t7_value !== (t7_value = /*needy*/ ctx[14].notes + "")) set_data_dev(t7, t7_value);
 
     			if (/*$isAuthenticated*/ ctx[6]) {
     				if (if_block1) {
@@ -5521,7 +5521,7 @@ var app = (function () {
     		block,
     		id: create_each_block$8.name,
     		type: "each",
-    		source: "(103:8) {#each needies as needy (needy.id)}",
+    		source: "(104:8) {#each needies as needy (needy.id)}",
     		ctx
     	});
 
@@ -5571,7 +5571,7 @@ var app = (function () {
     	let if_block = /*needyon*/ ctx[2] && /*$isAuthenticated*/ ctx[6] && create_if_block_3$3(ctx);
     	let each_value = /*needies*/ ctx[0];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*needy*/ ctx[13].id;
+    	const get_key = ctx => /*needy*/ ctx[14].id;
     	validate_each_keys(ctx, each_value, get_each_context$8, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -5629,54 +5629,54 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "mt-3");
-    			add_location(h1, file$h, 60, 8, 1417);
+    			add_location(h1, file$h, 61, 8, 1449);
     			attr_dev(label0, "class", "form-label");
     			attr_dev(label0, "for", "searchAddress");
-    			add_location(label0, file$h, 64, 14, 1554);
+    			add_location(label0, file$h, 65, 14, 1586);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "id", "searchAddress");
-    			add_location(input, file$h, 65, 14, 1631);
+    			add_location(input, file$h, 66, 14, 1663);
     			attr_dev(label1, "class", "form-label");
     			attr_dev(label1, "for", "searchNeeds");
-    			add_location(label1, file$h, 66, 14, 1735);
+    			add_location(label1, file$h, 67, 14, 1767);
     			option0.__value = "";
     			option0.value = option0.__value;
-    			add_location(option0, file$h, 68, 16, 1910);
+    			add_location(option0, file$h, 69, 16, 1942);
     			option1.__value = "food";
     			option1.value = option1.__value;
-    			add_location(option1, file$h, 69, 16, 1958);
+    			add_location(option1, file$h, 70, 16, 1990);
     			option2.__value = "water";
     			option2.value = option2.__value;
-    			add_location(option2, file$h, 70, 16, 2010);
+    			add_location(option2, file$h, 71, 16, 2042);
     			option3.__value = "shelter";
     			option3.value = option3.__value;
-    			add_location(option3, file$h, 71, 16, 2064);
+    			add_location(option3, file$h, 72, 16, 2096);
     			attr_dev(select, "class", "select-control");
     			attr_dev(select, "id", "searchNeeds");
     			select.multiple = true;
     			if (/*searchNeeds*/ ctx[1] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[11].call(select));
-    			add_location(select, file$h, 67, 14, 1808);
+    			add_location(select, file$h, 68, 14, 1840);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$h, 63, 12, 1521);
+    			add_location(div0, file$h, 64, 12, 1553);
     			attr_dev(div1, "class", "row mb-3");
-    			add_location(div1, file$h, 62, 10, 1485);
+    			add_location(div1, file$h, 63, 10, 1517);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "search-button");
-    			add_location(button, file$h, 76, 10, 2232);
-    			add_location(form, file$h, 61, 8, 1467);
+    			add_location(button, file$h, 77, 10, 2264);
+    			add_location(form, file$h, 62, 8, 1499);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$h, 79, 10, 2400);
+    			add_location(ul, file$h, 80, 10, 2432);
     			set_style(nav, "padding", "11px");
-    			add_location(nav, file$h, 78, 8, 2360);
+    			add_location(nav, file$h, 79, 8, 2392);
     			attr_dev(div2, "class", "search-form");
-    			add_location(div2, file$h, 59, 6, 1382);
+    			add_location(div2, file$h, 60, 6, 1414);
     			attr_dev(div3, "class", "search-results");
-    			add_location(div3, file$h, 94, 6, 2772);
+    			add_location(div3, file$h, 95, 6, 2804);
     			attr_dev(div4, "class", "search-section");
-    			add_location(div4, file$h, 58, 4, 1346);
+    			add_location(div4, file$h, 59, 4, 1378);
     			attr_dev(div5, "class", "container");
-    			add_location(div5, file$h, 57, 2, 1317);
+    			add_location(div5, file$h, 58, 2, 1349);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5841,13 +5841,14 @@ var app = (function () {
     	let currentPage;
     	let nrOfPages = 0;
     	let defaultPageSize = 4;
+    	const api_root = window.location.origin;
 
     	async function getNeedies() {
     		let query = "?pageSize=" + defaultPageSize + "&pageNumber=" + currentPage;
 
     		var config = {
     			method: "get",
-    			url: "http://localhost:8080/api/needy" + query,
+    			url: api_root + "/api/needy" + query,
     			params: {
     				address: searchAddress,
     				needs: searchNeeds.join(',')
@@ -5894,6 +5895,7 @@ var app = (function () {
     		currentPage,
     		nrOfPages,
     		defaultPageSize,
+    		api_root,
     		getNeedies,
     		navigateCreateNeedy: navigateCreateNeedy$1,
     		navigateAllNeedy: navigateAllNeedy$1,
@@ -6022,13 +6024,13 @@ var app = (function () {
     			td5 = element("td");
     			t10 = text(t10_value);
     			t11 = space();
-    			add_location(td0, file$g, 163, 8, 4044);
-    			add_location(td1, file$g, 164, 8, 4076);
-    			add_location(td2, file$g, 165, 8, 4111);
-    			add_location(td3, file$g, 166, 8, 4144);
-    			add_location(td4, file$g, 167, 8, 4178);
-    			add_location(td5, file$g, 168, 8, 4209);
-    			add_location(tr, file$g, 162, 6, 4030);
+    			add_location(td0, file$g, 163, 8, 4043);
+    			add_location(td1, file$g, 164, 8, 4075);
+    			add_location(td2, file$g, 165, 8, 4110);
+    			add_location(td3, file$g, 166, 8, 4143);
+    			add_location(td4, file$g, 167, 8, 4177);
+    			add_location(td5, file$g, 168, 8, 4208);
+    			add_location(tr, file$g, 162, 6, 4029);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -6248,119 +6250,119 @@ var app = (function () {
     			}
 
     			attr_dev(h10, "class", "mt-3");
-    			add_location(h10, file$g, 64, 2, 1321);
+    			add_location(h10, file$g, 64, 2, 1320);
     			attr_dev(label0, "class", "form-label");
     			attr_dev(label0, "for", "name");
-    			add_location(label0, file$g, 68, 8, 1442);
+    			add_location(label0, file$g, 68, 8, 1441);
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "id", "name");
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$g, 69, 8, 1501);
+    			add_location(input0, file$g, 69, 8, 1500);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$g, 67, 6, 1415);
+    			add_location(div0, file$g, 67, 6, 1414);
     			attr_dev(div1, "class", "row mb-3");
-    			add_location(div1, file$g, 66, 4, 1385);
+    			add_location(div1, file$g, 66, 4, 1384);
     			attr_dev(label1, "class", "form-label");
     			attr_dev(label1, "for", "name");
-    			add_location(label1, file$g, 79, 8, 1720);
+    			add_location(label1, file$g, 79, 8, 1719);
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "id", "address");
     			attr_dev(input1, "type", "text");
-    			add_location(input1, file$g, 80, 8, 1782);
+    			add_location(input1, file$g, 80, 8, 1781);
     			attr_dev(div2, "class", "col");
-    			add_location(div2, file$g, 78, 6, 1693);
+    			add_location(div2, file$g, 78, 6, 1692);
     			attr_dev(div3, "class", "row mb-3");
-    			add_location(div3, file$g, 77, 4, 1663);
+    			add_location(div3, file$g, 77, 4, 1662);
     			attr_dev(label2, "class", "form-label");
     			attr_dev(label2, "for", "email");
-    			add_location(label2, file$g, 90, 8, 2007);
+    			add_location(label2, file$g, 90, 8, 2006);
     			attr_dev(input2, "class", "form-control");
     			attr_dev(input2, "id", "email");
     			attr_dev(input2, "type", "email");
-    			add_location(input2, file$g, 91, 8, 2069);
+    			add_location(input2, file$g, 91, 8, 2068);
     			attr_dev(div4, "class", "col");
-    			add_location(div4, file$g, 89, 6, 1980);
+    			add_location(div4, file$g, 89, 6, 1979);
     			attr_dev(div5, "class", "row mb-3");
-    			add_location(div5, file$g, 88, 4, 1950);
+    			add_location(div5, file$g, 88, 4, 1949);
     			attr_dev(label3, "class", "form-label");
     			attr_dev(label3, "for", "type");
-    			add_location(label3, file$g, 101, 8, 2291);
+    			add_location(label3, file$g, 101, 8, 2290);
     			option0.__value = "Handwerker";
     			option0.value = option0.__value;
-    			add_location(option0, file$g, 109, 10, 2507);
+    			add_location(option0, file$g, 109, 10, 2506);
     			option1.__value = "KV";
     			option1.value = option1.__value;
-    			add_location(option1, file$g, 110, 10, 2565);
+    			add_location(option1, file$g, 110, 10, 2564);
     			option2.__value = "IT";
     			option2.value = option2.__value;
-    			add_location(option2, file$g, 111, 10, 2607);
+    			add_location(option2, file$g, 111, 10, 2606);
     			option3.__value = "Elektriker";
     			option3.value = option3.__value;
-    			add_location(option3, file$g, 112, 10, 2649);
+    			add_location(option3, file$g, 112, 10, 2648);
     			attr_dev(select0, "class", "form-control");
     			attr_dev(select0, "id", "skills");
     			select0.multiple = true;
     			if (/*helper*/ ctx[1].skills === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[6].call(select0));
-    			add_location(select0, file$g, 102, 8, 2352);
+    			add_location(select0, file$g, 102, 8, 2351);
     			attr_dev(div6, "class", "col");
-    			add_location(div6, file$g, 100, 6, 2264);
+    			add_location(div6, file$g, 100, 6, 2263);
     			attr_dev(div7, "class", "row mb-3");
-    			add_location(div7, file$g, 99, 4, 2234);
+    			add_location(div7, file$g, 99, 4, 2233);
     			attr_dev(label4, "class", "form-label");
     			attr_dev(label4, "for", "bio");
-    			add_location(label4, file$g, 118, 8, 2803);
+    			add_location(label4, file$g, 118, 8, 2802);
     			attr_dev(textarea, "class", "form-control");
     			attr_dev(textarea, "id", "bio");
     			attr_dev(textarea, "rows", "5");
-    			add_location(textarea, file$g, 119, 8, 2860);
+    			add_location(textarea, file$g, 119, 8, 2859);
     			attr_dev(div8, "class", "col");
-    			add_location(div8, file$g, 117, 6, 2776);
+    			add_location(div8, file$g, 117, 6, 2775);
     			attr_dev(div9, "class", "row mb-3");
-    			add_location(div9, file$g, 116, 4, 2746);
+    			add_location(div9, file$g, 116, 4, 2745);
     			attr_dev(label5, "class", "form-label");
     			attr_dev(label5, "for", "type");
-    			add_location(label5, file$g, 130, 10, 3095);
+    			add_location(label5, file$g, 130, 10, 3094);
     			option4.__value = "ASSIGNED";
     			option4.value = option4.__value;
-    			add_location(option4, file$g, 137, 14, 3333);
+    			add_location(option4, file$g, 137, 14, 3332);
     			option5.__value = "UNALLOCATED";
     			option5.value = option5.__value;
-    			add_location(option5, file$g, 138, 14, 3391);
+    			add_location(option5, file$g, 138, 14, 3390);
     			option6.__value = "DONE";
     			option6.value = option6.__value;
-    			add_location(option6, file$g, 139, 14, 3455);
+    			add_location(option6, file$g, 139, 14, 3454);
     			attr_dev(select1, "class", "form-select");
     			attr_dev(select1, "id", "type");
     			attr_dev(select1, "type", "text");
     			if (/*helper*/ ctx[1].helperState === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[8].call(select1));
-    			add_location(select1, file$g, 131, 10, 3163);
+    			add_location(select1, file$g, 131, 10, 3162);
     			attr_dev(div10, "class", "col");
-    			add_location(div10, file$g, 129, 6, 3066);
+    			add_location(div10, file$g, 129, 6, 3065);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file$g, 143, 4, 3538);
+    			add_location(button, file$g, 143, 4, 3537);
     			attr_dev(div11, "class", "row mb-3");
-    			add_location(div11, file$g, 128, 4, 3036);
+    			add_location(div11, file$g, 128, 4, 3035);
     			attr_dev(form, "class", "mb-5");
-    			add_location(form, file$g, 65, 2, 1360);
-    			add_location(h11, file$g, 148, 2, 3656);
+    			add_location(form, file$g, 65, 2, 1359);
+    			add_location(h11, file$g, 148, 2, 3655);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$g, 152, 8, 3736);
+    			add_location(th0, file$g, 152, 8, 3735);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$g, 153, 8, 3771);
+    			add_location(th1, file$g, 153, 8, 3770);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$g, 154, 8, 3809);
+    			add_location(th2, file$g, 154, 8, 3808);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$g, 155, 8, 3846);
+    			add_location(th3, file$g, 155, 8, 3845);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$g, 156, 8, 3883);
+    			add_location(th4, file$g, 156, 8, 3882);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$g, 157, 8, 3917);
-    			add_location(tr, file$g, 151, 6, 3722);
-    			add_location(thead, file$g, 150, 4, 3707);
-    			add_location(tbody, file$g, 160, 4, 3982);
+    			add_location(th5, file$g, 157, 8, 3916);
+    			add_location(tr, file$g, 151, 6, 3721);
+    			add_location(thead, file$g, 150, 4, 3706);
+    			add_location(tbody, file$g, 160, 4, 3981);
     			attr_dev(table, "class", "table");
-    			add_location(table, file$g, 149, 2, 3680);
+    			add_location(table, file$g, 149, 2, 3679);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6535,14 +6537,13 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$b = "http://localhost:8080";
-
     function instance$g($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	validate_store(jwt_token, 'jwt_token');
     	component_subscribe($$self, jwt_token, $$value => $$invalidate(9, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Helper', slots, []);
+    	const api_root = window.location.origin;
     	let helpers = [];
 
     	let helper = {
@@ -6556,7 +6557,7 @@ var app = (function () {
     	}; //helperState: null,
 
     	function getHelpers() {
-    		axios$1.get(api_root$b + "/api/helper", {
+    		axios$1.get(api_root + "/api/helper", {
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		}).then(function (response) {
     			$$invalidate(0, helpers = response.data);
@@ -6567,7 +6568,7 @@ var app = (function () {
     	}
 
     	function createHelper() {
-    		axios$1.post(api_root$b + "/api/helper", helper, {
+    		axios$1.post(api_root + "/api/helper", helper, {
     			headers: {
     				"Content-Type": "application/json",
     				"Authorization": "Bearer " + $jwt_token
@@ -6625,7 +6626,7 @@ var app = (function () {
     		onMount,
     		axios: axios$1,
     		jwt_token,
-    		api_root: api_root$b,
+    		api_root,
     		helpers,
     		helper,
     		getHelpers,
@@ -6959,12 +6960,12 @@ var app = (function () {
     			button.textContent = "Match";
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Needy ID");
-    			add_location(input0, file$e, 32, 4, 670);
+    			add_location(input0, file$e, 32, 4, 669);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "Helper Email");
-    			add_location(input1, file$e, 33, 4, 745);
-    			add_location(button, file$e, 34, 4, 828);
-    			add_location(div, file$e, 31, 2, 659);
+    			add_location(input1, file$e, 33, 4, 744);
+    			add_location(button, file$e, 34, 4, 827);
+    			add_location(div, file$e, 31, 2, 658);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7018,11 +7019,10 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$a = "http://localhost:8080";
-
     function instance$e($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('NeedyMatch', slots, []);
+    	const api_root = window.location.origin;
     	let { needyId } = $$props;
     	let match = { needyId, helperEmail: null };
 
@@ -7030,7 +7030,7 @@ var app = (function () {
     		var config = {
     			method: 'put',
     			maxBodyLength: Infinity,
-    			url: api_root$a + "/api/service/assignneedy",
+    			url: api_root + "/api/service/assignneedy",
     			headers: {},
     			data: match
     		};
@@ -7070,7 +7070,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		axios: axios$1,
-    		api_root: api_root$a,
+    		api_root,
     		needyId,
     		match,
     		putMatch
@@ -7648,7 +7648,7 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$9 = "http://localhost:8080";
+    const api_root = "http://localhost:8080";
 
     function instance$d($$self, $$props, $$invalidate) {
     	let $jwt_token;
@@ -7671,7 +7671,7 @@ var app = (function () {
     	}; //helperState: null,
 
     	function getHelpers() {
-    		axios$1.get(api_root$9 + "/api/helper", {
+    		axios$1.get(api_root + "/api/helper", {
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		}).then(function (response) {
     			$$invalidate(6, helpers = response.data);
@@ -7703,7 +7703,7 @@ var app = (function () {
     	}
 
     	function createHelper() {
-    		axios$1.post(api_root$9 + "/api/helper", helper, {
+    		axios$1.post(api_root + "/api/helper", helper, {
     			headers: {
     				"Content-Type": "application/json",
     				"Authorization": "Bearer " + $jwt_token
@@ -7759,7 +7759,7 @@ var app = (function () {
     		HelperCard,
     		NeedyMatch,
     		jwt_token,
-    		api_root: api_root$9,
+    		api_root,
     		filteredItems,
     		displaySearch,
     		searchTerm,
@@ -7876,13 +7876,13 @@ var app = (function () {
     			p4 = element("p");
     			t8 = text(t8_value);
     			t9 = space();
-    			add_location(p0, file$c, 59, 6, 1313);
-    			add_location(p1, file$c, 60, 6, 1342);
-    			add_location(p2, file$c, 61, 6, 1370);
-    			add_location(p3, file$c, 62, 6, 1398);
-    			add_location(p4, file$c, 63, 6, 1431);
+    			add_location(p0, file$c, 59, 6, 1312);
+    			add_location(p1, file$c, 60, 6, 1341);
+    			add_location(p2, file$c, 61, 6, 1369);
+    			add_location(p3, file$c, 62, 6, 1397);
+    			add_location(p4, file$c, 63, 6, 1430);
     			attr_dev(div, "class", "rating-output");
-    			add_location(div, file$c, 58, 4, 1278);
+    			add_location(div, file$c, 58, 4, 1277);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7953,11 +7953,11 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(p, file$c, 53, 0, 1141);
+    			add_location(p, file$c, 53, 0, 1140);
     			attr_dev(div0, "class", "output-container");
-    			add_location(div0, file$c, 56, 0, 1213);
+    			add_location(div0, file$c, 56, 0, 1212);
     			attr_dev(div1, "class", "wrapper");
-    			add_location(div1, file$c, 55, 0, 1190);
+    			add_location(div1, file$c, 55, 0, 1189);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8024,14 +8024,13 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$8 = "http://localhost:8080";
-
     function instance$c($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	validate_store(jwt_token, 'jwt_token');
     	component_subscribe($$self, jwt_token, $$value => $$invalidate(3, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('GetRating', slots, []);
+    	const api_root = window.location.origin;
     	const urlParam = window.location.href.split('/')[5];
     	console.log(urlParam);
     	let { ratings = [] } = $$props;
@@ -8049,7 +8048,7 @@ var app = (function () {
     	function getRating() {
     		var config = {
     			method: "get",
-    			url: api_root$8 + "/api/rating/helper/" + urlParam,
+    			url: api_root + "/api/rating/helper/" + urlParam,
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		};
 
@@ -8087,7 +8086,7 @@ var app = (function () {
     		axios: axios$1,
     		user,
     		jwt_token,
-    		api_root: api_root$8,
+    		api_root,
     		urlParam,
     		ratings,
     		rating,
@@ -8157,7 +8156,7 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t2 = space();
     			create_component(getrating.$$.fragment);
-    			add_location(button, file$b, 53, 0, 1262);
+    			add_location(button, file$b, 53, 0, 1261);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -8266,29 +8265,29 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Submit";
     			attr_dev(label0, "for", "titel");
-    			add_location(label0, file$b, 56, 2, 1361);
+    			add_location(label0, file$b, 56, 2, 1360);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "titel");
-    			add_location(input0, file$b, 57, 2, 1397);
+    			add_location(input0, file$b, 57, 2, 1396);
     			attr_dev(label1, "for", "name");
-    			add_location(label1, file$b, 59, 2, 1461);
+    			add_location(label1, file$b, 59, 2, 1460);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "id", "name");
-    			add_location(input1, file$b, 60, 2, 1495);
+    			add_location(input1, file$b, 60, 2, 1494);
     			attr_dev(label2, "for", "zahl");
-    			add_location(label2, file$b, 62, 2, 1557);
+    			add_location(label2, file$b, 62, 2, 1556);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "id", "zahl");
     			attr_dev(input2, "min", "1");
     			attr_dev(input2, "max", "5");
-    			add_location(input2, file$b, 63, 2, 1591);
+    			add_location(input2, file$b, 63, 2, 1590);
     			attr_dev(label3, "for", "rezession");
-    			add_location(label3, file$b, 66, 2, 1675);
+    			add_location(label3, file$b, 66, 2, 1674);
     			attr_dev(textarea, "id", "rezession");
-    			add_location(textarea, file$b, 67, 2, 1719);
+    			add_location(textarea, file$b, 67, 2, 1718);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$b, 69, 2, 1782);
-    			add_location(form, file$b, 55, 0, 1326);
+    			add_location(button, file$b, 69, 2, 1781);
+    			add_location(form, file$b, 55, 0, 1325);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, form, anchor);
@@ -8432,8 +8431,6 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$7 = "http://localhost:8080";
-
     function instance$b($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	let $user;
@@ -8443,6 +8440,7 @@ var app = (function () {
     	component_subscribe($$self, user, $$value => $$invalidate(2, $user = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Rating', slots, []);
+    	const api_root = window.location.origin;
     	const urlParam = window.location.href.split('/')[5];
 
     	let rating = {
@@ -8458,7 +8456,7 @@ var app = (function () {
     	function createRating() {
     		var config = {
     			method: "post",
-    			url: api_root$7 + "/api/rating",
+    			url: api_root + "/api/rating",
     			headers: {
     				"Content-Type": "application/json",
     				"Authorization": "Bearer " + $jwt_token
@@ -8515,7 +8513,7 @@ var app = (function () {
     		user,
     		jwt_token,
     		GetRating,
-    		api_root: api_root$7,
+    		api_root,
     		urlParam,
     		rating,
     		clicked,
@@ -8645,24 +8643,24 @@ var app = (function () {
     			t19 = space();
     			div2 = element("div");
     			create_component(rating.$$.fragment);
-    			add_location(h2, file$a, 39, 4, 818);
-    			add_location(p0, file$a, 40, 4, 847);
+    			add_location(h2, file$a, 39, 4, 817);
+    			add_location(p0, file$a, 40, 4, 846);
     			attr_dev(div0, "class", "card-header profile-header");
-    			add_location(div0, file$a, 38, 2, 772);
-    			add_location(strong0, file$a, 43, 7, 928);
-    			add_location(p1, file$a, 43, 4, 925);
-    			add_location(strong1, file$a, 44, 7, 974);
-    			add_location(p2, file$a, 44, 4, 971);
-    			add_location(strong2, file$a, 45, 7, 1030);
-    			add_location(p3, file$a, 45, 4, 1027);
-    			add_location(strong3, file$a, 46, 7, 1084);
-    			add_location(p4, file$a, 46, 4, 1081);
+    			add_location(div0, file$a, 38, 2, 771);
+    			add_location(strong0, file$a, 43, 7, 927);
+    			add_location(p1, file$a, 43, 4, 924);
+    			add_location(strong1, file$a, 44, 7, 973);
+    			add_location(p2, file$a, 44, 4, 970);
+    			add_location(strong2, file$a, 45, 7, 1029);
+    			add_location(p3, file$a, 45, 4, 1026);
+    			add_location(strong3, file$a, 46, 7, 1083);
+    			add_location(p4, file$a, 46, 4, 1080);
     			attr_dev(div1, "class", "card-body profile-body");
-    			add_location(div1, file$a, 42, 2, 883);
+    			add_location(div1, file$a, 42, 2, 882);
     			attr_dev(div2, "class", "rating-wrapper");
-    			add_location(div2, file$a, 49, 2, 1141);
+    			add_location(div2, file$a, 49, 2, 1140);
     			attr_dev(div3, "class", "card profile-container");
-    			add_location(div3, file$a, 37, 0, 732);
+    			add_location(div3, file$a, 37, 0, 731);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8735,14 +8733,13 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$6 = 'http://localhost:8080';
-
     function instance$a($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	validate_store(jwt_token, 'jwt_token');
     	component_subscribe($$self, jwt_token, $$value => $$invalidate(2, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('HelperDetails', slots, []);
+    	const api_root = window.location.origin;
     	let { params = {} } = $$props;
     	let helpers = [];
 
@@ -8750,7 +8747,7 @@ var app = (function () {
     		var config = {
     			method: 'get',
     			maxBodyLength: Infinity,
-    			url: api_root$6 + `/api/helper/${params.id}`,
+    			url: api_root + `/api/helper/${params.id}`,
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		};
 
@@ -8778,7 +8775,7 @@ var app = (function () {
     		axios: axios$1,
     		Rating,
     		jwt_token,
-    		api_root: api_root$6,
+    		api_root,
     		params,
     		helpers,
     		getHelpers,
@@ -8826,7 +8823,7 @@ var app = (function () {
 
     function get_each_context$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
+    	child_ctx[6] = list[i];
     	return child_ctx;
     }
 
@@ -8838,7 +8835,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Not logged in";
-    			add_location(p, file$9, 41, 4, 1138);
+    			add_location(p, file$9, 41, 4, 1137);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -8915,14 +8912,14 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*$user*/ ctx[2].picture)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			attr_dev(img, "srcset", "");
-    			add_location(img, file$9, 32, 7, 772);
-    			add_location(p0, file$9, 32, 4, 769);
-    			add_location(b0, file$9, 33, 7, 829);
-    			add_location(p1, file$9, 33, 4, 826);
-    			add_location(b1, file$9, 34, 7, 867);
-    			add_location(p2, file$9, 34, 4, 864);
-    			add_location(b2, file$9, 35, 7, 913);
-    			add_location(p3, file$9, 35, 4, 910);
+    			add_location(img, file$9, 32, 7, 771);
+    			add_location(p0, file$9, 32, 4, 768);
+    			add_location(b0, file$9, 33, 7, 828);
+    			add_location(p1, file$9, 33, 4, 825);
+    			add_location(b1, file$9, 34, 7, 866);
+    			add_location(p2, file$9, 34, 4, 863);
+    			add_location(b2, file$9, 35, 7, 912);
+    			add_location(p3, file$9, 35, 4, 909);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -9008,8 +9005,8 @@ var app = (function () {
     			b.textContent = "Roles:";
     			t1 = space();
     			t2 = text(t2_value);
-    			add_location(b, file$9, 38, 11, 1076);
-    			add_location(p, file$9, 38, 8, 1073);
+    			add_location(b, file$9, 38, 11, 1075);
+    			add_location(p, file$9, 38, 8, 1072);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -9039,21 +9036,21 @@ var app = (function () {
     // (47:2) {#each assignedNeedies as needy}
     function create_each_block$4(ctx) {
     	let li;
-    	let t_value = /*needy*/ ctx[5].name + "";
+    	let t_value = /*needy*/ ctx[6].name + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			li = element("li");
     			t = text(t_value);
-    			add_location(li, file$9, 47, 4, 1242);
+    			add_location(li, file$9, 47, 4, 1241);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
     			append_dev(li, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*assignedNeedies*/ 1 && t_value !== (t_value = /*needy*/ ctx[5].name + "")) set_data_dev(t, t_value);
+    			if (dirty & /*assignedNeedies*/ 1 && t_value !== (t_value = /*needy*/ ctx[6].name + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -9110,9 +9107,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$9, 29, 0, 713);
-    			add_location(h2, file$9, 44, 0, 1169);
-    			add_location(ul, file$9, 45, 0, 1196);
+    			add_location(h1, file$9, 29, 0, 712);
+    			add_location(h2, file$9, 44, 0, 1168);
+    			add_location(ul, file$9, 45, 0, 1195);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9194,8 +9191,6 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$5 = "http://localhost:8080";
-
     function instance$9($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	let $isAuthenticated;
@@ -9208,12 +9203,13 @@ var app = (function () {
     	component_subscribe($$self, user, $$value => $$invalidate(2, $user = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Account', slots, []);
+    	const api_root = window.location.origin;
     	let assignedNeedies = [];
 
     	function getAssignedNeedies() {
     		var config = {
     			method: "get",
-    			url: api_root$5 + "/api/me/assignedneedy",
+    			url: api_root + "/api/me/assignedneedy",
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		};
 
@@ -9237,7 +9233,7 @@ var app = (function () {
     		user,
     		jwt_token,
     		axios: axios$1,
-    		api_root: api_root$5,
+    		api_root,
     		assignedNeedies,
     		getAssignedNeedies,
     		$jwt_token,
@@ -9377,28 +9373,28 @@ var app = (function () {
     			t27 = space();
     			div2 = element("div");
     			create_component(rating.$$.fragment);
-    			add_location(h2, file$8, 36, 4, 802);
-    			add_location(p0, file$8, 37, 4, 831);
+    			add_location(h2, file$8, 36, 4, 801);
+    			add_location(p0, file$8, 37, 4, 830);
     			attr_dev(div0, "class", "card-header profile-header");
-    			add_location(div0, file$8, 35, 2, 756);
-    			add_location(strong0, file$8, 40, 7, 912);
-    			add_location(p1, file$8, 40, 4, 909);
-    			add_location(strong1, file$8, 41, 7, 958);
-    			add_location(p2, file$8, 41, 4, 955);
-    			add_location(strong2, file$8, 42, 7, 1014);
-    			add_location(p3, file$8, 42, 4, 1011);
-    			add_location(strong3, file$8, 43, 7, 1068);
-    			add_location(p4, file$8, 43, 4, 1065);
-    			add_location(strong4, file$8, 44, 7, 1120);
-    			add_location(p5, file$8, 44, 4, 1117);
-    			add_location(strong5, file$8, 45, 7, 1172);
-    			add_location(p6, file$8, 45, 4, 1169);
+    			add_location(div0, file$8, 35, 2, 755);
+    			add_location(strong0, file$8, 40, 7, 911);
+    			add_location(p1, file$8, 40, 4, 908);
+    			add_location(strong1, file$8, 41, 7, 957);
+    			add_location(p2, file$8, 41, 4, 954);
+    			add_location(strong2, file$8, 42, 7, 1013);
+    			add_location(p3, file$8, 42, 4, 1010);
+    			add_location(strong3, file$8, 43, 7, 1067);
+    			add_location(p4, file$8, 43, 4, 1064);
+    			add_location(strong4, file$8, 44, 7, 1119);
+    			add_location(p5, file$8, 44, 4, 1116);
+    			add_location(strong5, file$8, 45, 7, 1171);
+    			add_location(p6, file$8, 45, 4, 1168);
     			attr_dev(div1, "class", "card-body profile-body");
-    			add_location(div1, file$8, 39, 2, 867);
+    			add_location(div1, file$8, 39, 2, 866);
     			attr_dev(div2, "class", "rating-wrapper");
-    			add_location(div2, file$8, 48, 2, 1236);
+    			add_location(div2, file$8, 48, 2, 1235);
     			attr_dev(div3, "class", "card profile-container");
-    			add_location(div3, file$8, 34, 0, 716);
+    			add_location(div3, file$8, 34, 0, 715);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9483,21 +9479,20 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$4 = "http://localhost:8080";
-
     function instance$8($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	validate_store(jwt_token, 'jwt_token');
     	component_subscribe($$self, jwt_token, $$value => $$invalidate(2, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('NeedyDetails', slots, []);
+    	const api_root = window.location.origin;
     	let { params = {} } = $$props;
     	let needies = [];
 
     	async function getNeedyById() {
     		var config = {
     			method: 'get',
-    			url: api_root$4 + `/api/needy/${params.id}`,
+    			url: api_root + `/api/needy/${params.id}`,
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		};
 
@@ -9525,7 +9520,7 @@ var app = (function () {
     		axios: axios$1,
     		jwt_token,
     		Rating,
-    		api_root: api_root$4,
+    		api_root,
     		params,
     		needies,
     		getNeedyById,
@@ -9728,134 +9723,134 @@ var app = (function () {
     			button2.textContent = "Submit";
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn");
-    			add_location(button0, file$7, 53, 0, 1173);
+    			add_location(button0, file$7, 53, 0, 1172);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$7, 54, 0, 1261);
+    			add_location(button1, file$7, 54, 0, 1260);
     			attr_dev(h1, "class", "mt-3");
-    			add_location(h1, file$7, 59, 0, 1366);
+    			add_location(h1, file$7, 59, 0, 1365);
     			attr_dev(label0, "class", "form-label");
     			attr_dev(label0, "for", "name");
-    			add_location(label0, file$7, 63, 12, 1490);
+    			add_location(label0, file$7, 63, 12, 1489);
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "id", "name");
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$7, 64, 12, 1553);
+    			add_location(input0, file$7, 64, 12, 1552);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$7, 62, 8, 1459);
+    			add_location(div0, file$7, 62, 8, 1458);
     			attr_dev(label1, "class", "form-label");
     			attr_dev(label1, "for", "email");
-    			add_location(label1, file$7, 73, 12, 1777);
+    			add_location(label1, file$7, 73, 12, 1776);
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "id", "email");
     			attr_dev(input1, "type", "email");
-    			add_location(input1, file$7, 74, 12, 1842);
+    			add_location(input1, file$7, 74, 12, 1841);
     			attr_dev(div1, "class", "col");
-    			add_location(div1, file$7, 72, 8, 1746);
+    			add_location(div1, file$7, 72, 8, 1745);
     			attr_dev(div2, "class", "row mb-3");
-    			add_location(div2, file$7, 61, 4, 1427);
+    			add_location(div2, file$7, 61, 4, 1426);
     			attr_dev(label2, "class", "form-label");
     			attr_dev(label2, "for", "address");
-    			add_location(label2, file$7, 84, 12, 2099);
+    			add_location(label2, file$7, 84, 12, 2098);
     			attr_dev(input2, "class", "form-control");
     			attr_dev(input2, "id", "address");
     			attr_dev(input2, "type", "text");
-    			add_location(input2, file$7, 85, 12, 2168);
+    			add_location(input2, file$7, 85, 12, 2167);
     			attr_dev(div3, "class", "col");
-    			add_location(div3, file$7, 83, 8, 2068);
+    			add_location(div3, file$7, 83, 8, 2067);
     			attr_dev(label3, "class", "form-label");
     			attr_dev(label3, "for", "number");
-    			add_location(label3, file$7, 93, 12, 2388);
+    			add_location(label3, file$7, 93, 12, 2387);
     			attr_dev(input3, "class", "form-control");
     			attr_dev(input3, "id", "number");
     			attr_dev(input3, "type", "text");
-    			add_location(input3, file$7, 94, 12, 2455);
+    			add_location(input3, file$7, 94, 12, 2454);
     			attr_dev(div4, "class", "col");
-    			add_location(div4, file$7, 92, 8, 2357);
+    			add_location(div4, file$7, 92, 8, 2356);
     			attr_dev(div5, "class", "row mb-3");
-    			add_location(div5, file$7, 82, 4, 2036);
+    			add_location(div5, file$7, 82, 4, 2035);
     			attr_dev(label4, "class", "form-label");
     			attr_dev(label4, "for", "needs");
-    			add_location(label4, file$7, 105, 4, 2701);
+    			add_location(label4, file$7, 105, 4, 2700);
     			option0.__value = "food";
     			option0.value = option0.__value;
-    			add_location(option0, file$7, 112, 6, 2874);
+    			add_location(option0, file$7, 112, 6, 2873);
     			option1.__value = "water";
     			option1.value = option1.__value;
-    			add_location(option1, file$7, 113, 6, 2916);
+    			add_location(option1, file$7, 113, 6, 2915);
     			option2.__value = "shelter";
     			option2.value = option2.__value;
-    			add_location(option2, file$7, 114, 6, 2960);
+    			add_location(option2, file$7, 114, 6, 2959);
     			option3.__value = "clothing";
     			option3.value = option3.__value;
-    			add_location(option3, file$7, 115, 6, 3008);
+    			add_location(option3, file$7, 115, 6, 3007);
     			option4.__value = "medical";
     			option4.value = option4.__value;
-    			add_location(option4, file$7, 116, 6, 3058);
+    			add_location(option4, file$7, 116, 6, 3057);
     			option5.__value = "hygiene";
     			option5.value = option5.__value;
-    			add_location(option5, file$7, 117, 6, 3115);
+    			add_location(option5, file$7, 117, 6, 3114);
     			option6.__value = "bedding";
     			option6.value = option6.__value;
-    			add_location(option6, file$7, 118, 6, 3172);
+    			add_location(option6, file$7, 118, 6, 3171);
     			option7.__value = "furniture";
     			option7.value = option7.__value;
-    			add_location(option7, file$7, 119, 6, 3220);
+    			add_location(option7, file$7, 119, 6, 3219);
     			option8.__value = "transportation";
     			option8.value = option8.__value;
-    			add_location(option8, file$7, 120, 6, 3272);
+    			add_location(option8, file$7, 120, 6, 3271);
     			option9.__value = "childcare";
     			option9.value = option9.__value;
-    			add_location(option9, file$7, 121, 6, 3334);
+    			add_location(option9, file$7, 121, 6, 3333);
     			option10.__value = "petcare";
     			option10.value = option10.__value;
-    			add_location(option10, file$7, 122, 6, 3386);
+    			add_location(option10, file$7, 122, 6, 3385);
     			attr_dev(select0, "class", "form-control");
     			attr_dev(select0, "id", "needs");
     			select0.multiple = true;
     			if (/*needy*/ ctx[0].needs === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[6].call(select0));
-    			add_location(select0, file$7, 106, 4, 2758);
+    			add_location(select0, file$7, 106, 4, 2757);
     			attr_dev(div6, "class", "col");
-    			add_location(div6, file$7, 104, 2, 2678);
+    			add_location(div6, file$7, 104, 2, 2677);
     			attr_dev(div7, "class", "row mb-3");
-    			add_location(div7, file$7, 103, 2, 2652);
+    			add_location(div7, file$7, 103, 2, 2651);
     			attr_dev(label5, "class", "form-label");
     			attr_dev(label5, "for", "bio");
-    			add_location(label5, file$7, 129, 6, 3517);
+    			add_location(label5, file$7, 129, 6, 3516);
     			attr_dev(textarea, "class", "form-control");
     			attr_dev(textarea, "id", "bio");
     			attr_dev(textarea, "rows", "5");
-    			add_location(textarea, file$7, 130, 6, 3574);
+    			add_location(textarea, file$7, 130, 6, 3573);
     			attr_dev(div8, "class", "col");
-    			add_location(div8, file$7, 128, 4, 3492);
+    			add_location(div8, file$7, 128, 4, 3491);
     			attr_dev(div9, "class", "row mb-3");
-    			add_location(div9, file$7, 127, 0, 3464);
+    			add_location(div9, file$7, 127, 0, 3463);
     			attr_dev(label6, "class", "form-label");
     			attr_dev(label6, "for", "type");
-    			add_location(label6, file$7, 141, 8, 3784);
+    			add_location(label6, file$7, 141, 8, 3783);
     			option11.__value = "ASSIGNED";
     			option11.value = option11.__value;
-    			add_location(option11, file$7, 148, 12, 4011);
+    			add_location(option11, file$7, 148, 12, 4010);
     			option12.__value = "UNALLOCATED";
     			option12.value = option12.__value;
-    			add_location(option12, file$7, 149, 12, 4067);
+    			add_location(option12, file$7, 149, 12, 4066);
     			option13.__value = "DONE";
     			option13.value = option13.__value;
-    			add_location(option13, file$7, 150, 12, 4129);
+    			add_location(option13, file$7, 150, 12, 4128);
     			attr_dev(select1, "class", "form-select");
     			attr_dev(select1, "id", "needyState");
     			attr_dev(select1, "type", "text");
     			if (/*needy*/ ctx[0].needyState === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[8].call(select1));
-    			add_location(select1, file$7, 142, 8, 3849);
+    			add_location(select1, file$7, 142, 8, 3848);
     			attr_dev(div10, "class", "col");
-    			add_location(div10, file$7, 140, 4, 3757);
+    			add_location(div10, file$7, 140, 4, 3756);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-primary");
-    			add_location(button2, file$7, 157, 4, 4218);
+    			add_location(button2, file$7, 157, 4, 4217);
     			attr_dev(div11, "class", "row mb-3");
-    			add_location(div11, file$7, 139, 0, 3729);
+    			add_location(div11, file$7, 139, 0, 3728);
     			attr_dev(form, "class", "mb-5");
-    			add_location(form, file$7, 60, 0, 1402);
+    			add_location(form, file$7, 60, 0, 1401);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10003,8 +9998,6 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$3 = "http://localhost:8080";
-
     function handleNavigation$3() {
     	location.href = "#/needyhome";
     }
@@ -10019,6 +10012,7 @@ var app = (function () {
     	component_subscribe($$self, jwt_token, $$value => $$invalidate(9, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('CreateNeedy', slots, []);
+    	const api_root = window.location.origin;
     	let needies = [];
 
     	let needy = {
@@ -10034,7 +10028,7 @@ var app = (function () {
     	function createNeedy() {
     		var config = {
     			method: "post",
-    			url: api_root$3 + "/api/needy",
+    			url: api_root + "/api/needy",
     			headers: {
     				"Content-Type": "application/json",
     				"Authorization": "Bearer " + $jwt_token
@@ -10094,7 +10088,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		axios: axios$1,
     		jwt_token,
-    		api_root: api_root$3,
+    		api_root,
     		needies,
     		needy,
     		createNeedy,
@@ -10271,106 +10265,106 @@ var app = (function () {
     			button2.textContent = "Submit";
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn");
-    			add_location(button0, file$6, 57, 0, 1159);
+    			add_location(button0, file$6, 57, 0, 1158);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$6, 58, 0, 1249);
+    			add_location(button1, file$6, 58, 0, 1248);
     			attr_dev(h1, "class", "mt-3");
-    			add_location(h1, file$6, 62, 2, 1360);
+    			add_location(h1, file$6, 62, 2, 1359);
     			attr_dev(label0, "class", "form-label");
     			attr_dev(label0, "for", "name");
-    			add_location(label0, file$6, 66, 8, 1481);
+    			add_location(label0, file$6, 66, 8, 1480);
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "id", "name");
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$6, 67, 8, 1540);
+    			add_location(input0, file$6, 67, 8, 1539);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$6, 65, 6, 1454);
+    			add_location(div0, file$6, 65, 6, 1453);
     			attr_dev(div1, "class", "row mb-3");
-    			add_location(div1, file$6, 64, 4, 1424);
+    			add_location(div1, file$6, 64, 4, 1423);
     			attr_dev(label1, "class", "form-label");
     			attr_dev(label1, "for", "name");
-    			add_location(label1, file$6, 77, 8, 1759);
+    			add_location(label1, file$6, 77, 8, 1758);
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "id", "address");
     			attr_dev(input1, "type", "text");
-    			add_location(input1, file$6, 78, 8, 1821);
+    			add_location(input1, file$6, 78, 8, 1820);
     			attr_dev(div2, "class", "col");
-    			add_location(div2, file$6, 76, 6, 1732);
+    			add_location(div2, file$6, 76, 6, 1731);
     			attr_dev(div3, "class", "row mb-3");
-    			add_location(div3, file$6, 75, 4, 1702);
+    			add_location(div3, file$6, 75, 4, 1701);
     			attr_dev(label2, "class", "form-label");
     			attr_dev(label2, "for", "email");
-    			add_location(label2, file$6, 88, 8, 2046);
+    			add_location(label2, file$6, 88, 8, 2045);
     			attr_dev(input2, "class", "form-control");
     			attr_dev(input2, "id", "email");
     			attr_dev(input2, "type", "email");
-    			add_location(input2, file$6, 89, 8, 2108);
+    			add_location(input2, file$6, 89, 8, 2107);
     			attr_dev(div4, "class", "col");
-    			add_location(div4, file$6, 87, 6, 2019);
+    			add_location(div4, file$6, 87, 6, 2018);
     			attr_dev(div5, "class", "row mb-3");
-    			add_location(div5, file$6, 86, 4, 1989);
+    			add_location(div5, file$6, 86, 4, 1988);
     			attr_dev(label3, "class", "form-label");
     			attr_dev(label3, "for", "type");
-    			add_location(label3, file$6, 99, 8, 2330);
+    			add_location(label3, file$6, 99, 8, 2329);
     			option0.__value = "Handwerker";
     			option0.value = option0.__value;
-    			add_location(option0, file$6, 107, 10, 2546);
+    			add_location(option0, file$6, 107, 10, 2545);
     			option1.__value = "KV";
     			option1.value = option1.__value;
-    			add_location(option1, file$6, 108, 10, 2604);
+    			add_location(option1, file$6, 108, 10, 2603);
     			option2.__value = "IT";
     			option2.value = option2.__value;
-    			add_location(option2, file$6, 109, 10, 2646);
+    			add_location(option2, file$6, 109, 10, 2645);
     			option3.__value = "Elektriker";
     			option3.value = option3.__value;
-    			add_location(option3, file$6, 110, 10, 2688);
+    			add_location(option3, file$6, 110, 10, 2687);
     			attr_dev(select0, "class", "form-control");
     			attr_dev(select0, "id", "skills");
     			select0.multiple = true;
     			if (/*helper*/ ctx[0].skills === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[5].call(select0));
-    			add_location(select0, file$6, 100, 8, 2391);
+    			add_location(select0, file$6, 100, 8, 2390);
     			attr_dev(div6, "class", "col");
-    			add_location(div6, file$6, 98, 6, 2303);
+    			add_location(div6, file$6, 98, 6, 2302);
     			attr_dev(div7, "class", "row mb-3");
-    			add_location(div7, file$6, 97, 4, 2273);
+    			add_location(div7, file$6, 97, 4, 2272);
     			attr_dev(label4, "class", "form-label");
     			attr_dev(label4, "for", "bio");
-    			add_location(label4, file$6, 116, 8, 2842);
+    			add_location(label4, file$6, 116, 8, 2841);
     			attr_dev(textarea, "class", "form-control");
     			attr_dev(textarea, "id", "bio");
     			attr_dev(textarea, "rows", "5");
-    			add_location(textarea, file$6, 117, 8, 2899);
+    			add_location(textarea, file$6, 117, 8, 2898);
     			attr_dev(div8, "class", "col");
-    			add_location(div8, file$6, 115, 6, 2815);
+    			add_location(div8, file$6, 115, 6, 2814);
     			attr_dev(div9, "class", "row mb-3");
-    			add_location(div9, file$6, 114, 4, 2785);
+    			add_location(div9, file$6, 114, 4, 2784);
     			attr_dev(label5, "class", "form-label");
     			attr_dev(label5, "for", "type");
-    			add_location(label5, file$6, 128, 10, 3134);
+    			add_location(label5, file$6, 128, 10, 3133);
     			option4.__value = "ASSIGNED";
     			option4.value = option4.__value;
-    			add_location(option4, file$6, 135, 14, 3372);
+    			add_location(option4, file$6, 135, 14, 3371);
     			option5.__value = "UNALLOCATED";
     			option5.value = option5.__value;
-    			add_location(option5, file$6, 136, 14, 3430);
+    			add_location(option5, file$6, 136, 14, 3429);
     			option6.__value = "DONE";
     			option6.value = option6.__value;
-    			add_location(option6, file$6, 137, 14, 3494);
+    			add_location(option6, file$6, 137, 14, 3493);
     			attr_dev(select1, "class", "form-select");
     			attr_dev(select1, "id", "type");
     			attr_dev(select1, "type", "text");
     			if (/*helper*/ ctx[0].helperState === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[7].call(select1));
-    			add_location(select1, file$6, 129, 10, 3202);
+    			add_location(select1, file$6, 129, 10, 3201);
     			attr_dev(div10, "class", "col");
-    			add_location(div10, file$6, 127, 6, 3105);
+    			add_location(div10, file$6, 127, 6, 3104);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-primary");
-    			add_location(button2, file$6, 141, 4, 3577);
+    			add_location(button2, file$6, 141, 4, 3576);
     			attr_dev(div11, "class", "row mb-3");
-    			add_location(div11, file$6, 126, 4, 3075);
+    			add_location(div11, file$6, 126, 4, 3074);
     			attr_dev(form, "class", "mb-5");
-    			add_location(form, file$6, 63, 2, 1399);
+    			add_location(form, file$6, 63, 2, 1398);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10501,8 +10495,6 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$2 = "http://localhost:8080";
-
     function navigateCreateHelper$2() {
     	location.href = '#/helperhome';
     }
@@ -10521,6 +10513,7 @@ var app = (function () {
     	component_subscribe($$self, jwt_token, $$value => $$invalidate(8, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('CreateHelper', slots, []);
+    	const api_root = window.location.origin;
     	let helpers = [];
 
     	let helper = {
@@ -10534,7 +10527,7 @@ var app = (function () {
     	}; //helperState: null,
 
     	function createHelper() {
-    		axios$1.post(api_root$2 + "/api/helper", helper, {
+    		axios$1.post(api_root + "/api/helper", helper, {
     			headers: {
     				"Content-Type": "application/json",
     				"Authorization": "Bearer " + $jwt_token
@@ -10587,7 +10580,7 @@ var app = (function () {
     		onMount,
     		axios: axios$1,
     		jwt_token,
-    		api_root: api_root$2,
+    		api_root,
     		helpers,
     		helper,
     		createHelper,
@@ -10804,22 +10797,22 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
+    	child_ctx[15] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
-    	child_ctx[19] = i;
+    	child_ctx[18] = list[i];
+    	child_ctx[20] = i;
     	return child_ctx;
     }
 
-    // (86:16) {#each Array(nrOfPages) as _, i}
+    // (87:16) {#each Array(nrOfPages) as _, i}
     function create_each_block_1$2(ctx) {
     	let li;
     	let a;
-    	let t0_value = /*i*/ ctx[19] + 1 + "";
+    	let t0_value = /*i*/ ctx[20] + 1 + "";
     	let t0;
     	let t1;
 
@@ -10830,11 +10823,11 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(a, "class", "page-link");
-    			attr_dev(a, "href", "#/helperhome?page=" + (/*i*/ ctx[19] + 1));
-    			toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[19] + 1);
-    			add_location(a, file$4, 87, 16, 2877);
+    			attr_dev(a, "href", "#/helperhome?page=" + (/*i*/ ctx[20] + 1));
+    			toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[20] + 1);
+    			add_location(a, file$4, 88, 16, 2909);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$4, 86, 16, 2837);
+    			add_location(li, file$4, 87, 16, 2869);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -10844,7 +10837,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*currentPage*/ 16) {
-    				toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[19] + 1);
+    				toggle_class(a, "active", /*currentPage*/ ctx[4] == /*i*/ ctx[20] + 1);
     			}
     		},
     		d: function destroy(detaching) {
@@ -10856,14 +10849,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(86:16) {#each Array(nrOfPages) as _, i}",
+    		source: "(87:16) {#each Array(nrOfPages) as _, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:12) {#if helperon && $isAuthenticated}
+    // (100:12) {#if helperon && $isAuthenticated}
     function create_if_block_4$1(ctx) {
     	let button0;
     	let t1;
@@ -10885,11 +10878,11 @@ var app = (function () {
     			h1.textContent = "All Helpers";
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn");
-    			add_location(button0, file$4, 99, 16, 3267);
+    			add_location(button0, file$4, 100, 16, 3299);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn");
-    			add_location(button1, file$4, 100, 16, 3373);
-    			add_location(h1, file$4, 101, 16, 3479);
+    			add_location(button1, file$4, 101, 16, 3405);
+    			add_location(h1, file$4, 102, 16, 3511);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button0, anchor);
@@ -10923,18 +10916,18 @@ var app = (function () {
     		block,
     		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(99:12) {#if helperon && $isAuthenticated}",
+    		source: "(100:12) {#if helperon && $isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (109:28) {#if $isAuthenticated}
+    // (110:28) {#if $isAuthenticated}
     function create_if_block_3$2(ctx) {
     	let li;
     	let a;
-    	let t_value = /*helper*/ ctx[14].name + "";
+    	let t_value = /*helper*/ ctx[15].name + "";
     	let t;
     	let a_href_value;
 
@@ -10943,9 +10936,9 @@ var app = (function () {
     			li = element("li");
     			a = element("a");
     			t = text(t_value);
-    			attr_dev(a, "href", a_href_value = `#/helper/${/*helper*/ ctx[14].id}`);
-    			add_location(a, file$4, 109, 36, 3842);
-    			add_location(li, file$4, 109, 32, 3838);
+    			attr_dev(a, "href", a_href_value = `#/helper/${/*helper*/ ctx[15].id}`);
+    			add_location(a, file$4, 110, 36, 3874);
+    			add_location(li, file$4, 110, 32, 3870);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -10953,9 +10946,9 @@ var app = (function () {
     			append_dev(a, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*helpers*/ 1 && t_value !== (t_value = /*helper*/ ctx[14].name + "")) set_data_dev(t, t_value);
+    			if (dirty & /*helpers*/ 1 && t_value !== (t_value = /*helper*/ ctx[15].name + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*helpers*/ 1 && a_href_value !== (a_href_value = `#/helper/${/*helper*/ ctx[14].id}`)) {
+    			if (dirty & /*helpers*/ 1 && a_href_value !== (a_href_value = `#/helper/${/*helper*/ ctx[15].id}`)) {
     				attr_dev(a, "href", a_href_value);
     			}
     		},
@@ -10968,31 +10961,31 @@ var app = (function () {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(109:28) {#if $isAuthenticated}",
+    		source: "(110:28) {#if $isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (113:28) {#if helper.skills}
+    // (114:28) {#if helper.skills}
     function create_if_block_2$2(ctx) {
     	let li;
-    	let t_value = /*helper*/ ctx[14].skills.join(", ") + "";
+    	let t_value = /*helper*/ ctx[15].skills.join(", ") + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			li = element("li");
     			t = text(t_value);
-    			add_location(li, file$4, 113, 32, 4071);
+    			add_location(li, file$4, 114, 32, 4103);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
     			append_dev(li, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*helpers*/ 1 && t_value !== (t_value = /*helper*/ ctx[14].skills.join(", ") + "")) set_data_dev(t, t_value);
+    			if (dirty & /*helpers*/ 1 && t_value !== (t_value = /*helper*/ ctx[15].skills.join(", ") + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -11003,31 +10996,31 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(113:28) {#if helper.skills}",
+    		source: "(114:28) {#if helper.skills}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (117:28) {#if $isAuthenticated}
+    // (118:28) {#if $isAuthenticated}
     function create_if_block_1$2(ctx) {
     	let li;
-    	let t_value = /*helper*/ ctx[14].helperState + "";
+    	let t_value = /*helper*/ ctx[15].helperState + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			li = element("li");
     			t = text(t_value);
-    			add_location(li, file$4, 117, 32, 4278);
+    			add_location(li, file$4, 118, 32, 4310);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
     			append_dev(li, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*helpers*/ 1 && t_value !== (t_value = /*helper*/ ctx[14].helperState + "")) set_data_dev(t, t_value);
+    			if (dirty & /*helpers*/ 1 && t_value !== (t_value = /*helper*/ ctx[15].helperState + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -11038,14 +11031,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(117:28) {#if $isAuthenticated}",
+    		source: "(118:28) {#if $isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:24) {#if !$isAuthenticated}
+    // (122:24) {#if !$isAuthenticated}
     function create_if_block$3(ctx) {
     	let p;
 
@@ -11053,7 +11046,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Please log in to see the full card";
-    			add_location(p, file$4, 122, 28, 4475);
+    			add_location(p, file$4, 123, 28, 4507);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11067,14 +11060,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(121:24) {#if !$isAuthenticated}",
+    		source: "(122:24) {#if !$isAuthenticated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (104:12) {#each helpers as helper (helper.id)}
+    // (105:12) {#each helpers as helper (helper.id)}
     function create_each_block$3(key_1, ctx) {
     	let div1;
     	let div0;
@@ -11083,18 +11076,18 @@ var app = (function () {
     	let t1;
     	let t2;
     	let li0;
-    	let t3_value = /*helper*/ ctx[14].address + "";
+    	let t3_value = /*helper*/ ctx[15].address + "";
     	let t3;
     	let t4;
     	let t5;
     	let li1;
-    	let t6_value = /*helper*/ ctx[14].bio + "";
+    	let t6_value = /*helper*/ ctx[15].bio + "";
     	let t6;
     	let t7;
     	let t8;
     	let t9;
     	let if_block0 = /*$isAuthenticated*/ ctx[6] && create_if_block_3$2(ctx);
-    	let if_block1 = /*helper*/ ctx[14].skills && create_if_block_2$2(ctx);
+    	let if_block1 = /*helper*/ ctx[15].skills && create_if_block_2$2(ctx);
     	let if_block2 = /*$isAuthenticated*/ ctx[6] && create_if_block_1$2(ctx);
     	let if_block3 = !/*$isAuthenticated*/ ctx[6] && create_if_block$3(ctx);
 
@@ -11122,14 +11115,14 @@ var app = (function () {
     			t8 = space();
     			if (if_block3) if_block3.c();
     			t9 = space();
-    			add_location(p, file$4, 107, 26, 3708);
-    			add_location(li0, file$4, 111, 28, 3963);
-    			add_location(li1, file$4, 115, 28, 4171);
-    			add_location(ul, file$4, 106, 24, 3676);
+    			add_location(p, file$4, 108, 26, 3740);
+    			add_location(li0, file$4, 112, 28, 3995);
+    			add_location(li1, file$4, 116, 28, 4203);
+    			add_location(ul, file$4, 107, 24, 3708);
     			attr_dev(div0, "class", "card-body");
-    			add_location(div0, file$4, 105, 20, 3627);
+    			add_location(div0, file$4, 106, 20, 3659);
     			attr_dev(div1, "class", "card");
-    			add_location(div1, file$4, 104, 16, 3587);
+    			add_location(div1, file$4, 105, 16, 3619);
     			this.first = div1;
     		},
     		m: function mount(target, anchor) {
@@ -11169,9 +11162,9 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty & /*helpers*/ 1 && t3_value !== (t3_value = /*helper*/ ctx[14].address + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*helpers*/ 1 && t3_value !== (t3_value = /*helper*/ ctx[15].address + "")) set_data_dev(t3, t3_value);
 
-    			if (/*helper*/ ctx[14].skills) {
+    			if (/*helper*/ ctx[15].skills) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -11184,7 +11177,7 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if (dirty & /*helpers*/ 1 && t6_value !== (t6_value = /*helper*/ ctx[14].bio + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*helpers*/ 1 && t6_value !== (t6_value = /*helper*/ ctx[15].bio + "")) set_data_dev(t6, t6_value);
 
     			if (/*$isAuthenticated*/ ctx[6]) {
     				if (if_block2) {
@@ -11223,7 +11216,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(104:12) {#each helpers as helper (helper.id)}",
+    		source: "(105:12) {#each helpers as helper (helper.id)}",
     		ctx
     	});
 
@@ -11273,7 +11266,7 @@ var app = (function () {
     	let if_block = /*helperon*/ ctx[2] && /*$isAuthenticated*/ ctx[6] && create_if_block_4$1(ctx);
     	let each_value = /*helpers*/ ctx[0];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*helper*/ ctx[14].id;
+    	const get_key = ctx => /*helper*/ ctx[15].id;
     	validate_each_keys(ctx, each_value, get_each_context$3, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -11331,54 +11324,54 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "mt-3");
-    			add_location(h1, file$4, 65, 12, 1664);
+    			add_location(h1, file$4, 66, 12, 1696);
     			attr_dev(label0, "class", "form-label");
     			attr_dev(label0, "for", "searchAddress");
-    			add_location(label0, file$4, 69, 24, 1829);
+    			add_location(label0, file$4, 70, 24, 1861);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "id", "searchAddress");
-    			add_location(input, file$4, 70, 24, 1916);
+    			add_location(input, file$4, 71, 24, 1948);
     			attr_dev(label1, "class", "form-label");
     			attr_dev(label1, "for", "searchHelper");
-    			add_location(label1, file$4, 71, 24, 2030);
+    			add_location(label1, file$4, 72, 24, 2062);
     			option0.__value = "";
     			option0.value = option0.__value;
-    			add_location(option0, file$4, 73, 28, 2231);
+    			add_location(option0, file$4, 74, 28, 2263);
     			option1.__value = "Handwerker";
     			option1.value = option1.__value;
-    			add_location(option1, file$4, 74, 28, 2291);
+    			add_location(option1, file$4, 75, 28, 2323);
     			option2.__value = "IT";
     			option2.value = option2.__value;
-    			add_location(option2, file$4, 75, 28, 2367);
+    			add_location(option2, file$4, 76, 28, 2399);
     			option3.__value = "KV";
     			option3.value = option3.__value;
-    			add_location(option3, file$4, 76, 28, 2427);
+    			add_location(option3, file$4, 77, 28, 2459);
     			attr_dev(select, "class", "select-control");
     			attr_dev(select, "id", "searchHelper");
     			select.multiple = true;
     			if (/*searchHelper*/ ctx[1] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[11].call(select));
-    			add_location(select, file$4, 72, 24, 2115);
+    			add_location(select, file$4, 73, 24, 2147);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$4, 68, 20, 1786);
+    			add_location(div0, file$4, 69, 20, 1818);
     			attr_dev(div1, "class", "row mb-3");
-    			add_location(div1, file$4, 67, 16, 1742);
+    			add_location(div1, file$4, 68, 16, 1774);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "search-button");
-    			add_location(button, file$4, 80, 16, 2562);
-    			add_location(form, file$4, 66, 12, 1718);
+    			add_location(button, file$4, 81, 16, 2594);
+    			add_location(form, file$4, 67, 12, 1750);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$4, 84, 16, 2746);
+    			add_location(ul, file$4, 85, 16, 2778);
     			set_style(nav, "padding", "11px");
-    			add_location(nav, file$4, 83, 12, 2700);
+    			add_location(nav, file$4, 84, 12, 2732);
     			attr_dev(div2, "class", "search-form");
-    			add_location(div2, file$4, 64, 8, 1625);
+    			add_location(div2, file$4, 65, 8, 1657);
     			attr_dev(div3, "class", "search-results");
-    			add_location(div3, file$4, 97, 8, 3173);
+    			add_location(div3, file$4, 98, 8, 3205);
     			attr_dev(div4, "class", "search-section");
-    			add_location(div4, file$4, 63, 4, 1587);
+    			add_location(div4, file$4, 64, 4, 1619);
     			attr_dev(div5, "class", "container");
-    			add_location(div5, file$4, 62, 0, 1558);
+    			add_location(div5, file$4, 63, 0, 1590);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11546,6 +11539,7 @@ var app = (function () {
     	let currentPage;
     	let nrOfPages = 0;
     	let defaultPageSize = 4;
+    	const api_root = window.location.origin;
 
     	async function getHelpers() {
     		let query = "?pageSize=" + defaultPageSize + " &pageNumber=" + currentPage;
@@ -11553,7 +11547,7 @@ var app = (function () {
     		try {
     			const config = {
     				method: 'get',
-    				url: 'http://localhost:8080/api/helper' + query,
+    				url: api_root + '/api/helper' + query,
     				params: {
     					address: searchAddress,
     					skills: searchHelper.join(',')
@@ -11601,6 +11595,7 @@ var app = (function () {
     		currentPage,
     		nrOfPages,
     		defaultPageSize,
+    		api_root,
     		getHelpers,
     		navigateCreateHelper: navigateCreateHelper$1,
     		navigateAllHelpers,
@@ -11677,14 +11672,14 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
-    	child_ctx[16] = i;
+    	child_ctx[15] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
@@ -11695,7 +11690,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[9](/*needy*/ ctx[17]);
+    		return /*click_handler*/ ctx[9](/*needy*/ ctx[18]);
     	}
 
     	const block = {
@@ -11704,7 +11699,7 @@ var app = (function () {
     			button.textContent = "Assign to me";
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-primary btn-sm");
-    			add_location(button, file$3, 138, 12, 4089);
+    			add_location(button, file$3, 138, 12, 4088);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -11744,7 +11739,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Assigned";
     			attr_dev(span, "class", "badge bg-secondary");
-    			add_location(span, file$3, 136, 12, 3981);
+    			add_location(span, file$3, 136, 12, 3980);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -11773,7 +11768,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[10](/*needy*/ ctx[17]);
+    		return /*click_handler_1*/ ctx[10](/*needy*/ ctx[18]);
     	}
 
     	const block = {
@@ -11782,7 +11777,7 @@ var app = (function () {
     			button.textContent = "Complete Job";
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-primary btn-sm");
-    			add_location(button, file$3, 149, 12, 4520);
+    			add_location(button, file$3, 149, 12, 4519);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -11822,7 +11817,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Done";
     			attr_dev(span, "class", "badge bg-secondary");
-    			add_location(span, file$3, 147, 12, 4374);
+    			add_location(span, file$3, 147, 12, 4373);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -11848,31 +11843,31 @@ var app = (function () {
     function create_each_block_1$1(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*needy*/ ctx[17].name + "";
+    	let t0_value = /*needy*/ ctx[18].name + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*needy*/ ctx[17].email + "";
+    	let t2_value = /*needy*/ ctx[18].email + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*needy*/ ctx[17].address + "";
+    	let t4_value = /*needy*/ ctx[18].address + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*needy*/ ctx[17].number + "";
+    	let t6_value = /*needy*/ ctx[18].number + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*needy*/ ctx[17].needs.join(", ") + "";
+    	let t8_value = /*needy*/ ctx[18].needs.join(", ") + "";
     	let t8;
     	let t9;
     	let td5;
-    	let t10_value = /*needy*/ ctx[17].notes + "";
+    	let t10_value = /*needy*/ ctx[18].notes + "";
     	let t10;
     	let t11;
     	let td6;
-    	let t12_value = /*needy*/ ctx[17].helperId + "";
+    	let t12_value = /*needy*/ ctx[18].helperId + "";
     	let t12;
     	let t13;
     	let td7;
@@ -11880,16 +11875,16 @@ var app = (function () {
     	let t15;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*needy*/ ctx[17].needyState === "ASSIGNED") return create_if_block_2$1;
-    		if (/*needy*/ ctx[17].helperId === null) return create_if_block_3$1;
+    		if (/*needy*/ ctx[18].needyState === "ASSIGNED") return create_if_block_2$1;
+    		if (/*needy*/ ctx[18].helperId === null) return create_if_block_3$1;
     	}
 
     	let current_block_type = select_block_type(ctx);
     	let if_block0 = current_block_type && current_block_type(ctx);
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*needy*/ ctx[17].needyState === "DONE") return create_if_block$2;
-    		if (/*needy*/ ctx[17].needyState === "ASSIGNED" && /*needy*/ ctx[17].helperId === /*$myHelperId*/ ctx[4]) return create_if_block_1$1;
+    		if (/*needy*/ ctx[18].needyState === "DONE") return create_if_block$2;
+    		if (/*needy*/ ctx[18].needyState === "ASSIGNED" && /*needy*/ ctx[18].helperId === /*$myHelperId*/ ctx[4]) return create_if_block_1$1;
     	}
 
     	let current_block_type_1 = select_block_type_1(ctx);
@@ -11924,15 +11919,15 @@ var app = (function () {
     			t14 = space();
     			if (if_block1) if_block1.c();
     			t15 = space();
-    			add_location(td0, file$3, 127, 8, 3674);
-    			add_location(td1, file$3, 128, 8, 3705);
-    			add_location(td2, file$3, 129, 8, 3737);
-    			add_location(td3, file$3, 130, 8, 3771);
-    			add_location(td4, file$3, 131, 8, 3804);
-    			add_location(td5, file$3, 132, 8, 3847);
-    			add_location(td6, file$3, 133, 8, 3879);
-    			add_location(td7, file$3, 134, 8, 3914);
-    			add_location(tr, file$3, 126, 6, 3660);
+    			add_location(td0, file$3, 127, 8, 3673);
+    			add_location(td1, file$3, 128, 8, 3704);
+    			add_location(td2, file$3, 129, 8, 3736);
+    			add_location(td3, file$3, 130, 8, 3770);
+    			add_location(td4, file$3, 131, 8, 3803);
+    			add_location(td5, file$3, 132, 8, 3846);
+    			add_location(td6, file$3, 133, 8, 3878);
+    			add_location(td7, file$3, 134, 8, 3913);
+    			add_location(tr, file$3, 126, 6, 3659);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -11964,13 +11959,13 @@ var app = (function () {
     			append_dev(tr, t15);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*needies*/ 8 && t0_value !== (t0_value = /*needy*/ ctx[17].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*needies*/ 8 && t2_value !== (t2_value = /*needy*/ ctx[17].email + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*needies*/ 8 && t4_value !== (t4_value = /*needy*/ ctx[17].address + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*needies*/ 8 && t6_value !== (t6_value = /*needy*/ ctx[17].number + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*needies*/ 8 && t8_value !== (t8_value = /*needy*/ ctx[17].needs.join(", ") + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*needies*/ 8 && t10_value !== (t10_value = /*needy*/ ctx[17].notes + "")) set_data_dev(t10, t10_value);
-    			if (dirty & /*needies*/ 8 && t12_value !== (t12_value = /*needy*/ ctx[17].helperId + "")) set_data_dev(t12, t12_value);
+    			if (dirty & /*needies*/ 8 && t0_value !== (t0_value = /*needy*/ ctx[18].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*needies*/ 8 && t2_value !== (t2_value = /*needy*/ ctx[18].email + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*needies*/ 8 && t4_value !== (t4_value = /*needy*/ ctx[18].address + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*needies*/ 8 && t6_value !== (t6_value = /*needy*/ ctx[18].number + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*needies*/ 8 && t8_value !== (t8_value = /*needy*/ ctx[18].needs.join(", ") + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*needies*/ 8 && t10_value !== (t10_value = /*needy*/ ctx[18].notes + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*needies*/ 8 && t12_value !== (t12_value = /*needy*/ ctx[18].helperId + "")) set_data_dev(t12, t12_value);
 
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block0) {
     				if_block0.p(ctx, dirty);
@@ -12024,7 +12019,7 @@ var app = (function () {
     function create_each_block$2(ctx) {
     	let li;
     	let a;
-    	let t0_value = /*i*/ ctx[16] + 1 + "";
+    	let t0_value = /*i*/ ctx[17] + 1 + "";
     	let t0;
     	let t1;
 
@@ -12035,11 +12030,11 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(a, "class", "page-link");
-    			attr_dev(a, "href", "#/allneedy?page=" + (/*i*/ ctx[16] + 1));
-    			toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[16] + 1);
-    			add_location(a, file$3, 167, 4, 4927);
+    			attr_dev(a, "href", "#/allneedy?page=" + (/*i*/ ctx[17] + 1));
+    			toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[17] + 1);
+    			add_location(a, file$3, 167, 4, 4926);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$3, 166, 4, 4899);
+    			add_location(li, file$3, 166, 4, 4898);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -12049,7 +12044,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*currentPage*/ 1) {
-    				toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[16] + 1);
+    				toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[17] + 1);
     			}
     		},
     		d: function destroy(detaching) {
@@ -12205,67 +12200,67 @@ var app = (function () {
 
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn");
-    			add_location(button0, file$3, 89, 2, 2410);
+    			add_location(button0, file$3, 89, 2, 2409);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn");
-    			add_location(button1, file$3, 90, 2, 2500);
+    			add_location(button1, file$3, 90, 2, 2499);
     			attr_dev(label, "for", "");
     			attr_dev(label, "class", "col-form-label");
-    			add_location(label, file$3, 94, 6, 2641);
+    			add_location(label, file$3, 94, 6, 2640);
     			attr_dev(div0, "class", "col-auto");
-    			add_location(div0, file$3, 93, 4, 2611);
+    			add_location(div0, file$3, 93, 4, 2610);
     			option0.__value = "ALL";
     			option0.value = option0.__value;
-    			add_location(option0, file$3, 98, 8, 2834);
+    			add_location(option0, file$3, 98, 8, 2833);
     			option1.__value = "UNALLOCATED";
     			option1.value = option1.__value;
-    			add_location(option1, file$3, 99, 8, 2873);
+    			add_location(option1, file$3, 99, 8, 2872);
     			option2.__value = "ASSIGNED";
     			option2.value = option2.__value;
-    			add_location(option2, file$3, 100, 8, 2931);
+    			add_location(option2, file$3, 100, 8, 2930);
     			option3.__value = "DONE";
     			option3.value = option3.__value;
-    			add_location(option3, file$3, 101, 8, 2983);
+    			add_location(option3, file$3, 101, 8, 2982);
     			attr_dev(select, "class", "form-select");
     			attr_dev(select, "id", "needyState");
     			attr_dev(select, "type", "text");
     			if (/*needyState*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[8].call(select));
-    			add_location(select, file$3, 97, 6, 2744);
+    			add_location(select, file$3, 97, 6, 2743);
     			attr_dev(div1, "class", "col-3");
-    			add_location(div1, file$3, 96, 4, 2717);
+    			add_location(div1, file$3, 96, 4, 2716);
     			attr_dev(a, "class", "btn btn-primary");
     			attr_dev(a, "href", a_href_value = "#/allneedy?page=1&needyState=" + /*needyState*/ ctx[2]);
     			attr_dev(a, "role", "button");
-    			add_location(a, file$3, 105, 6, 3079);
+    			add_location(a, file$3, 105, 6, 3078);
     			attr_dev(div2, "class", "col-3");
-    			add_location(div2, file$3, 104, 4, 3052);
+    			add_location(div2, file$3, 104, 4, 3051);
     			attr_dev(div3, "class", "row my-3");
-    			add_location(div3, file$3, 92, 2, 2583);
-    			add_location(h1, file$3, 110, 2, 3215);
+    			add_location(div3, file$3, 92, 2, 2582);
+    			add_location(h1, file$3, 110, 2, 3214);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$3, 114, 8, 3295);
+    			add_location(th0, file$3, 114, 8, 3294);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$3, 115, 8, 3330);
+    			add_location(th1, file$3, 115, 8, 3329);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$3, 116, 8, 3366);
+    			add_location(th2, file$3, 116, 8, 3365);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$3, 117, 8, 3404);
+    			add_location(th3, file$3, 117, 8, 3403);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$3, 118, 8, 3441);
+    			add_location(th4, file$3, 118, 8, 3440);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$3, 119, 8, 3477);
+    			add_location(th5, file$3, 119, 8, 3476);
     			attr_dev(th6, "scope", "col");
-    			add_location(th6, file$3, 120, 8, 3513);
+    			add_location(th6, file$3, 120, 8, 3512);
     			attr_dev(th7, "scope", "col");
-    			add_location(th7, file$3, 121, 8, 3552);
-    			add_location(tr, file$3, 113, 6, 3281);
-    			add_location(thead, file$3, 112, 4, 3266);
-    			add_location(tbody, file$3, 124, 4, 3613);
+    			add_location(th7, file$3, 121, 8, 3551);
+    			add_location(tr, file$3, 113, 6, 3280);
+    			add_location(thead, file$3, 112, 4, 3265);
+    			add_location(tbody, file$3, 124, 4, 3612);
     			attr_dev(table, "class", "table");
-    			add_location(table, file$3, 111, 2, 3239);
+    			add_location(table, file$3, 111, 2, 3238);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$3, 164, 4, 4832);
-    			add_location(nav, file$3, 163, 2, 4821);
+    			add_location(ul, file$3, 164, 4, 4831);
+    			add_location(nav, file$3, 163, 2, 4820);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12429,8 +12424,6 @@ var app = (function () {
     	return block;
     }
 
-    const api_root$1 = "http://localhost:8080";
-
     function handleNavigation$1() {
     	location.href = "#/needyhome";
     }
@@ -12451,6 +12444,7 @@ var app = (function () {
     	component_subscribe($$self, myHelperId, $$value => $$invalidate(4, $myHelperId = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('AllNeedy', slots, []);
+    	const api_root = window.location.origin;
     	let currentPage;
     	let nrOfPages = 0;
     	let defaultPageSize = 10;
@@ -12462,7 +12456,7 @@ var app = (function () {
 
     		var config = {
     			method: "get",
-    			url: api_root$1 + "/api/needy" + query,
+    			url: api_root + "/api/needy" + query,
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		};
 
@@ -12478,7 +12472,7 @@ var app = (function () {
     	function assignToNeedy(needyId) {
     		var config = {
     			method: "put",
-    			url: api_root$1 + "/api/service/me/assignneedy?needyId=" + needyId,
+    			url: api_root + "/api/service/me/assignneedy?needyId=" + needyId,
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		};
 
@@ -12493,7 +12487,7 @@ var app = (function () {
     	function completeNeedy(needyId) {
     		var config = {
     			method: "put",
-    			url: api_root$1 + "/api/service/me/completeneedy?needyId=" + needyId,
+    			url: api_root + "/api/service/me/completeneedy?needyId=" + needyId,
     			headers: { "Authorization": "Bearer " + $jwt_token }
     		};
 
@@ -12531,7 +12525,7 @@ var app = (function () {
     		jwt_token,
     		myHelperId,
     		querystring,
-    		api_root: api_root$1,
+    		api_root,
     		currentPage,
     		nrOfPages,
     		defaultPageSize,
@@ -12611,14 +12605,14 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[7] = list[i];
-    	child_ctx[9] = i;
+    	child_ctx[8] = list[i];
+    	child_ctx[10] = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
@@ -12626,27 +12620,27 @@ var app = (function () {
     function create_each_block_1(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*helper*/ ctx[10].name + "";
+    	let t0_value = /*helper*/ ctx[11].name + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*helper*/ ctx[10].address + "";
+    	let t2_value = /*helper*/ ctx[11].address + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*helper*/ ctx[10].email + "";
+    	let t4_value = /*helper*/ ctx[11].email + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*helper*/ ctx[10].skills + "";
+    	let t6_value = /*helper*/ ctx[11].skills + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*helper*/ ctx[10].bio + "";
+    	let t8_value = /*helper*/ ctx[11].bio + "";
     	let t8;
     	let t9;
     	let td5;
-    	let t10_value = /*helper*/ ctx[10].helperState + "";
+    	let t10_value = /*helper*/ ctx[11].helperState + "";
     	let t10;
     	let t11;
 
@@ -12671,13 +12665,13 @@ var app = (function () {
     			td5 = element("td");
     			t10 = text(t10_value);
     			t11 = space();
-    			add_location(td0, file$2, 79, 6, 1768);
-    			add_location(td1, file$2, 80, 6, 1798);
-    			add_location(td2, file$2, 81, 6, 1831);
-    			add_location(td3, file$2, 82, 6, 1862);
-    			add_location(td4, file$2, 83, 6, 1894);
-    			add_location(td5, file$2, 84, 6, 1923);
-    			add_location(tr, file$2, 78, 4, 1756);
+    			add_location(td0, file$2, 79, 6, 1767);
+    			add_location(td1, file$2, 80, 6, 1797);
+    			add_location(td2, file$2, 81, 6, 1830);
+    			add_location(td3, file$2, 82, 6, 1861);
+    			add_location(td4, file$2, 83, 6, 1893);
+    			add_location(td5, file$2, 84, 6, 1922);
+    			add_location(tr, file$2, 78, 4, 1755);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -12701,12 +12695,12 @@ var app = (function () {
     			append_dev(tr, t11);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*helpers*/ 1 && t0_value !== (t0_value = /*helper*/ ctx[10].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*helpers*/ 1 && t2_value !== (t2_value = /*helper*/ ctx[10].address + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*helpers*/ 1 && t4_value !== (t4_value = /*helper*/ ctx[10].email + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*helpers*/ 1 && t6_value !== (t6_value = /*helper*/ ctx[10].skills + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*helpers*/ 1 && t8_value !== (t8_value = /*helper*/ ctx[10].bio + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*helpers*/ 1 && t10_value !== (t10_value = /*helper*/ ctx[10].helperState + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*helpers*/ 1 && t0_value !== (t0_value = /*helper*/ ctx[11].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*helpers*/ 1 && t2_value !== (t2_value = /*helper*/ ctx[11].address + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*helpers*/ 1 && t4_value !== (t4_value = /*helper*/ ctx[11].email + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*helpers*/ 1 && t6_value !== (t6_value = /*helper*/ ctx[11].skills + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*helpers*/ 1 && t8_value !== (t8_value = /*helper*/ ctx[11].bio + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*helpers*/ 1 && t10_value !== (t10_value = /*helper*/ ctx[11].helperState + "")) set_data_dev(t10, t10_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -12728,7 +12722,7 @@ var app = (function () {
     function create_each_block$1(ctx) {
     	let li;
     	let a;
-    	let t0_value = /*i*/ ctx[9] + 1 + "";
+    	let t0_value = /*i*/ ctx[10] + 1 + "";
     	let t0;
     	let t1;
 
@@ -12739,11 +12733,11 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(a, "class", "page-link");
-    			attr_dev(a, "href", "#/allhelper?page=" + (/*i*/ ctx[9] + 1));
-    			toggle_class(a, "active", /*currentPage*/ ctx[1] == /*i*/ ctx[9] + 1);
-    			add_location(a, file$2, 94, 2, 2100);
+    			attr_dev(a, "href", "#/allhelper?page=" + (/*i*/ ctx[10] + 1));
+    			toggle_class(a, "active", /*currentPage*/ ctx[1] == /*i*/ ctx[10] + 1);
+    			add_location(a, file$2, 94, 2, 2099);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$2, 93, 2, 2074);
+    			add_location(li, file$2, 93, 2, 2073);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -12753,7 +12747,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*currentPage*/ 2) {
-    				toggle_class(a, "active", /*currentPage*/ ctx[1] == /*i*/ ctx[9] + 1);
+    				toggle_class(a, "active", /*currentPage*/ ctx[1] == /*i*/ ctx[10] + 1);
     			}
     		},
     		d: function destroy(detaching) {
@@ -12864,31 +12858,31 @@ var app = (function () {
 
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn");
-    			add_location(button0, file$2, 61, 0, 1239);
+    			add_location(button0, file$2, 61, 0, 1238);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn");
-    			add_location(button1, file$2, 62, 0, 1329);
-    			add_location(h1, file$2, 64, 0, 1410);
+    			add_location(button1, file$2, 62, 0, 1328);
+    			add_location(h1, file$2, 64, 0, 1409);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$2, 68, 6, 1482);
+    			add_location(th0, file$2, 68, 6, 1481);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$2, 69, 6, 1515);
+    			add_location(th1, file$2, 69, 6, 1514);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$2, 70, 6, 1551);
+    			add_location(th2, file$2, 70, 6, 1550);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$2, 71, 6, 1586);
+    			add_location(th3, file$2, 71, 6, 1585);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$2, 72, 6, 1621);
+    			add_location(th4, file$2, 72, 6, 1620);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$2, 73, 6, 1653);
-    			add_location(tr, file$2, 67, 4, 1470);
-    			add_location(thead, file$2, 66, 2, 1457);
-    			add_location(tbody, file$2, 76, 2, 1712);
+    			add_location(th5, file$2, 73, 6, 1652);
+    			add_location(tr, file$2, 67, 4, 1469);
+    			add_location(thead, file$2, 66, 2, 1456);
+    			add_location(tbody, file$2, 76, 2, 1711);
     			attr_dev(table, "class", "table");
-    			add_location(table, file$2, 65, 0, 1432);
+    			add_location(table, file$2, 65, 0, 1431);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$2, 91, 2, 2011);
-    			add_location(nav, file$2, 90, 0, 2002);
+    			add_location(ul, file$2, 91, 2, 2010);
+    			add_location(nav, file$2, 90, 0, 2001);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13021,8 +13015,6 @@ var app = (function () {
     	return block;
     }
 
-    const api_root = "http://localhost:8080";
-
     function navigateCreateHelper() {
     	location.href = '#/helper';
     }
@@ -13040,6 +13032,7 @@ var app = (function () {
     	component_subscribe($$self, querystring, $$value => $$invalidate(3, $querystring = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('AllHelper', slots, []);
+    	const api_root = window.location.origin;
     	let helpers = [];
     	let currentPage;
     	let nrOfPages = 0;

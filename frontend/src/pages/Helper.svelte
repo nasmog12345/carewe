@@ -4,7 +4,7 @@
     import { jwt_token} from "../store";
  
   
-    const api_root = "http://localhost:8080";
+    const api_root = window.location.origin;
   
     let helpers = [];
  let helper = {

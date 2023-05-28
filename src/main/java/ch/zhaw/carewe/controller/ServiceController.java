@@ -23,8 +23,6 @@ public class ServiceController {
 
     @Autowired
     NeedyService needyService;
-    
-  
 
     @CrossOrigin(origins = "http://localhost:8081")
     @PutMapping("/assignneedy")
@@ -59,7 +57,5 @@ public class ServiceController {
         }
         return new ResponseEntity<Needy>(HttpStatus.BAD_REQUEST);
     }
-
-    
 
 }

@@ -31,7 +31,7 @@ class NeedyControllerTest {
 
     @Test
     void createNeedyTest() {
-        // Erstellen Sie ein Mock NeedyCreateDTO
+        // Erstell do en Mock NeedyCreateDTO
         NeedyCreateDTO mockNDTO = new NeedyCreateDTO();
         mockNDTO.setName("Test Name");
         mockNDTO.setEmail("test@example.com");
@@ -41,22 +41,21 @@ class NeedyControllerTest {
         mockNDTO.setNotes("Test Notes");
         mockNDTO.setNeedyState(NeedyState.UNALLOCATED);
 
-        // Erstellen Sie ein Mock Needy
+        // Erstell do en Mock Needy
         Needy mockNeedy = new Needy(mockNDTO.getName(), mockNDTO.getEmail(), mockNDTO.getAddress(),
                 mockNDTO.getNumber(),
                 mockNDTO.getNeeds(), mockNDTO.getNotes(), mockNDTO.getNeedyState());
 
-        // Mocken Sie das Verhalten der save-Methode
-        Mockito.when(needyRepository.save(any(Needy.class))).thenReturn(mockNeedy);
+            Mockito.when(needyRepository.save(any(Needy.class))).thenReturn(mockNeedy);
 
-        // Testen Sie die Methode
+        // Test
         ResponseEntity<Needy> response = needyController.createNeedy(mockNDTO);
 
-        // Überprüfen Sie das Ergebnis
+        // Überprüfe
         assertEquals(mockNeedy, response.getBody());
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
 
-        // Überprüfen Sie, ob die save-Methode aufgerufen wurde
+        // Überprüfe
         verify(needyRepository).save(any(Needy.class));
     }
 

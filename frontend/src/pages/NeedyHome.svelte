@@ -11,6 +11,7 @@
   let currentPage;
 let nrOfPages = 0;
 let defaultPageSize = 4;
+const api_root = window.location.origin;
 
 $: {
 let searchParams = new URLSearchParams($querystring);
@@ -26,7 +27,7 @@ getNeedies();
     let query = "?pageSize=" + defaultPageSize + "&pageNumber=" + currentPage;
       var config = {
           method: "get",
-          url: "http://localhost:8080/api/needy" + query,
+          url: api_root + "/api/needy" + query,
           params: {
               address: searchAddress,
               needs: searchNeeds.join(',')

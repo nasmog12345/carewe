@@ -12,6 +12,7 @@
     let currentPage;
 let nrOfPages = 0;
 let defaultPageSize = 4;
+const api_root = window.location.origin;
 
 $: {
 let searchParams = new URLSearchParams($querystring);
@@ -28,7 +29,7 @@ getHelpers();
         try {
             const config = {
                 method: 'get',
-                url: 'http://localhost:8080/api/helper' + query,
+                url: api_root + '/api/helper' + query,
                 params: {
                     address: searchAddress,
                     skills: searchHelper.join(','),
